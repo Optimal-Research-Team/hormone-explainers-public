@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- seo:start -->
+<title>Cortisol awakening response, slope and AUC, explained · Optimal</title>
+<meta name="description" content="The cortisol awakening response, diurnal slope and area under the curve: three research measures from one daily curve, and their limits. Chapter 3 of 8.">
+<link rel="canonical" href="https://optimal-research-team.github.io/hormone-explainers-public/03-measuring-cortisol.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_CA">
+<meta property="og:site_name" content="Optimal · Hormone Explainers">
+<meta property="og:title" content="Three ways to measure cortisol · Hormone Explainers">
+<meta property="og:description" content="The cortisol awakening response, diurnal slope and area under the curve: three research measures from one daily curve, and their limits. Chapter 3 of 8.">
+<meta property="og:url" content="https://optimal-research-team.github.io/hormone-explainers-public/03-measuring-cortisol.html">
+<meta property="og:image" content="https://optimal-research-team.github.io/hormone-explainers-public/assets/og/03.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Three ways to measure cortisol: an illustrated diagram from Optimal’s hormone explainers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Three ways to measure cortisol · Hormone Explainers">
+<meta name="twitter:description" content="The cortisol awakening response, diurnal slope and area under the curve: three research measures from one daily curve, and their limits. Chapter 3 of 8.">
+<meta name="twitter:image" content="https://optimal-research-team.github.io/hormone-explainers-public/assets/og/03.jpg">
+<meta name="twitter:image:alt" content="Three ways to measure cortisol: an illustrated diagram from Optimal’s hormone explainers">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://optimal-research-team.github.io/hormone-explainers-public/#site","name":"Hormone Explainers","url":"https://optimal-research-team.github.io/hormone-explainers-public/","inLanguage":"en-CA","publisher":{"@id":"https://beoptimal.ca/#clinic"}},{"@type":"MedicalClinic","@id":"https://beoptimal.ca/#clinic","name":"Optimal Health Clinic","url":"https://beoptimal.ca","logo":"https://optimal-research-team.github.io/hormone-explainers-public/assets/img/optimal-wordmark-green.png","telephone":"+1-437-370-0291","email":"care@beoptimal.ca","address":{"@type":"PostalAddress","streetAddress":"630 Huronia Road, Unit 5","addressLocality":"Barrie","addressRegion":"ON","postalCode":"L4N 0W5","addressCountry":"CA"}},{"@type":"MedicalWebPage","@id":"https://optimal-research-team.github.io/hormone-explainers-public/03-measuring-cortisol.html#page","url":"https://optimal-research-team.github.io/hormone-explainers-public/03-measuring-cortisol.html","name":"Three ways to measure cortisol","headline":"Three ways to measure cortisol","description":"The cortisol awakening response, diurnal slope and area under the curve: three research measures from one daily curve, and their limits. Chapter 3 of 8.","inLanguage":"en-CA","audience":{"@type":"MedicalAudience","audienceType":"Patient"},"specialty":"https://schema.org/Endocrine","about":[{"@type":"MedicalEntity","name":"Cortisol awakening response"},{"@type":"MedicalEntity","name":"Diurnal cortisol slope"},{"@type":"MedicalEntity","name":"Salivary cortisol"}],"image":"https://optimal-research-team.github.io/hormone-explainers-public/assets/og/03.jpg","dateModified":"2026-09-28","isPartOf":{"@id":"https://optimal-research-team.github.io/hormone-explainers-public/#site"},"publisher":{"@id":"https://beoptimal.ca/#clinic"},"position":3,"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hormone Explainers","item":"https://optimal-research-team.github.io/hormone-explainers-public/"},{"@type":"ListItem","position":2,"name":"Three ways to measure cortisol","item":"https://optimal-research-team.github.io/hormone-explainers-public/03-measuring-cortisol.html"}]}}]}</script>
+<!-- seo:end -->
+<meta name="theme-color" content="#FFFCF7">
+<link rel="icon" href="assets/img/symbol-green.png">
+<script>document.documentElement.classList.add('js');if(/[?&]still/.test(location.search))document.documentElement.classList.add('still');if(/[?&]og/.test(location.search))document.documentElement.classList.add('og')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Public+Sans:ital,wght@0,300..700;1,400..500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+.emph { opacity: 0; transition: opacity .4s var(--ease); }
+.emph.is-on { opacity: 1; }
+.badge-t { cursor: pointer; }
+.badge-t circle { transition: r .3s var(--spring); }
+.badge-t.is-on circle { r: 21px; }
+.ghost { transition: opacity .5s var(--ease); }
+.step .tags .chip.cur.status-ok { background: var(--forest); color: var(--cream) !important; border-color: transparent; }
+.step .tags .chip.status-bad { color: var(--bark) !important; border-color: rgba(122, 75, 42, .3) !important; }
+.step .tags .chip.cur.status-bad { background: var(--bark); color: var(--cream) !important; border-color: transparent !important; }
+.step .tags .chip:not(.cur) { opacity: .7; }
+.m-num { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; font-family: var(--sans); font-size: 14px; font-weight: 700; color: #10190F; margin-right: 12px; vertical-align: 5px; }
+@media (max-width: 640px) { .svg-label, .t-lab { display: none; } }
+</style>
+</head>
+<body data-chapter="3">
+<div id="nav" class="nav-wrap"></div>
+
+<section class="story at-head" id="story" data-links aria-label="Reading the daily cortisol curve, step by step">
+  <header class="chapter-head" id="top">
+    <p class="ch-kicker reveal"><span class="num">Chapter 03</span><span>Measurement</span></p>
+    <h1 class="display reveal" style="--i:1">Three ways to <em class="mark">measure</em> cortisol</h1>
+    <p class="lede reveal" style="--i:2">Cortisol changes hour by hour, so researchers often describe the shape of the whole day rather than one value. These three research measures are all read from the same curve.</p>
+    <div class="head-actions reveal" style="--i:3">
+      <a class="btn btn-primary" href="#story" data-begin>Begin<svg class="go" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.5v11M3.5 9 8 13.5 12.5 9"/></svg></a>
+      <button class="btn-text" type="button" data-present><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.8" y="2.5" width="12.4" height="8.5" rx="1.6"/><path d="M8 11v2.5M5.5 13.5h5"/><path d="M6.8 5.2v3.1L9.3 6.75z" fill="currentColor"/></svg>Present in the exam room</button>
+    </div>
+    <figure class="head-cover-m reveal" style="--i:3" aria-hidden="true"><picture><source srcset="assets/img/chapters/03.webp" type="image/webp"><img src="assets/img/chapters/03.jpg" alt="" width="1536" height="1024" decoding="async"></picture></figure>
+    <nav class="toc reveal" style="--i:4" aria-label="In this chapter"><p class="toc-h"><span>In this chapter</span><span class="num">6 steps</span></p><ol></ol></nav>
+  </header>
+  <div class="stage-col">
+    <figure class="panel-cover" style="--op:70%" aria-hidden="true"><picture><source srcset="assets/img/chapters/03.webp" type="image/webp"><img src="assets/img/chapters/03.jpg" alt="" width="1536" height="1024" decoding="async" fetchpriority="high"></picture><figcaption><span class="num">Plate 03</span>The shape of a day</figcaption></figure>
+    <div class="stage" id="stage">
+      <div class="stage-head">
+        <span class="stage-label">Fig. 03 · One illustrative day of salivary cortisol</span>
+        <div class="gseg" role="group" aria-label="Curve pattern" data-keys>
+          <button type="button" data-p="healthy" aria-pressed="true"><span class="sw" style="background:#B7D3AE"></span>Typical</button>
+          <button type="button" data-p="flat" aria-pressed="false"><span class="sw" style="background:#EE8B75"></span>Flatter</button>
+        </div>
+      </div>
+      <div class="stage-canvas">
+        <svg viewBox="0 0 900 416" role="img" aria-label="Daily salivary cortisol curve with the awakening response, diurnal slope and area under the curve marked.">
+          <defs>
+            <linearGradient id="auc" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#B7D3AE" stop-opacity=".42"/><stop offset="1" stop-color="#B7D3AE" stop-opacity=".03"/></linearGradient>
+            <filter id="glow" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <g class="lk" data-k="car"><rect x="40" y="20" width="130" height="330" fill="#F2B46E" opacity=".1"/><line x1="170" y1="20" x2="170" y2="350" stroke="#F2B46E" stroke-opacity=".35" stroke-dasharray="2 5"/></g>
+          <g class="fx-fade" style="--d:1.2s"><path class="lk" data-k="auc" id="aucFill" fill="url(#auc)" d="M 40 190 C 70 130, 120 82, 170 80 C 380 90, 620 280, 860 318 L 860 350 L 40 350 Z"/></g>
+          <line class="ax" x1="40" y1="16" x2="40" y2="350"/>
+          <line class="ax" x1="40" y1="350" x2="872" y2="350"/>
+          <text class="t-lab" x="26" y="22" transform="rotate(-90 26 22)" text-anchor="end">CORTISOL</text>
+          <path d="M 164 344 l 6 -10 M 172 344 l 6 -10" stroke="rgba(255,252,247,.45)" stroke-width="1.5" fill="none"/>
+          <text class="t-lab" x="40" y="404" font-size="10" fill-opacity=".7">FIRST 30 MIN SHOWN ENLARGED</text>
+          <g class="t-lab"><text x="40" y="384">WAKE</text><text x="170" y="384" text-anchor="middle">+30 MIN</text><text x="450" y="384" text-anchor="middle">MIDDAY</text><text x="860" y="384" text-anchor="end">BEDTIME</text></g>
+          <path class="ghost" id="ghost" d="M 40 190 C 70 130, 120 82, 170 80 C 380 90, 620 280, 860 318" fill="none" stroke="#F2B46E" stroke-opacity=".5" stroke-width="2.5" stroke-dasharray="4 7" opacity="0"/>
+          <g class="fx-fade" style="--d:1.5s"><line class="lk" data-k="slope" id="slope" x1="170" y1="80" x2="860" y2="318" stroke="#FFFCF7" stroke-opacity=".8" stroke-width="2.5" stroke-dasharray="8 7"/></g>
+          <path class="draw" id="curve" pathLength="1" style="--d:.3s;--dur:1.5s" d="M 40 190 C 70 130, 120 82, 170 80 C 380 90, 620 280, 860 318" fill="none" stroke="#F2B46E" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+          <path class="emph" data-k="car" id="rise" d="M 40 190 C 70 130, 120 82, 170 80" fill="none" stroke="#FFD29C" stroke-width="10" stroke-linecap="round" filter="url(#glow)"/>
+          <g class="fx-fade" style="--d:1.7s">
+            <g class="lk" data-k="slope">
+              <circle id="dPt" cx="170" cy="80" r="9" fill="#10190F" stroke="#FFFCF7" stroke-width="3.5"/>
+              <circle id="nPt" cx="860" cy="318" r="9" fill="#10190F" stroke="#FFFCF7" stroke-width="3.5"/>
+              <text class="svg-label t-ser t-it" id="dLab" x="188" y="66" font-size="23">peak (D)</text>
+              <text class="svg-label t-ser t-it" id="nLab" x="846" y="342" font-size="23" text-anchor="end">night (N)</text>
+            </g>
+          </g>
+          <g font-family="Public Sans" font-size="17" font-weight="700" fill="#10190F" text-anchor="middle">
+            <g class="fx-pop" style="--d:2s"><g class="badge-t lk" data-t="car" data-k="car"><circle cx="105" cy="48" r="17" fill="#F2B46E"/><text x="105" y="54">1</text></g></g>
+            <g class="fx-pop" style="--d:2.15s"><g class="badge-t lk" data-t="slope" data-k="slope" id="b2"><circle cx="515" cy="172" r="17" fill="#FFFCF7"/><text x="515" y="178">2</text></g></g>
+            <g class="fx-pop" style="--d:2.3s"><g class="badge-t lk" data-t="auc" data-k="auc"><circle cx="420" cy="302" r="17" fill="#B7D3AE"/><text x="420" y="308">3</text></g></g>
+          </g>
+        </svg>
+      </div>
+      <div class="stage-foot">
+        <div class="readout" id="readout" aria-live="polite"><span class="d"></span><span id="pText">Typical pattern: a clear rise, a steady fall and a mid-range total.</span></div>
+        <div class="stepper">
+          <button class="sbtn" type="button" data-step-prev aria-label="Previous step"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg></button>
+          <div class="dots"></div>
+          <button class="sbtn" type="button" data-step-next aria-label="Next step"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 3 5 5-5 5"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="present-top"><img src="assets/img/optimal-wordmark-green.png" alt="Optimal"><span class="pt-label">03 · Measurement</span><button class="present-close" type="button" data-present-exit><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg>Exit<kbd>Esc</kbd></button></div>
+
+    <article class="step"><div class="step-inner">
+      <span class="step-n"></span>
+      <h2>Read the whole curve</h2>
+      <p>This is an illustrative day of salivary cortisol, from waking to bedtime. In research, the curve is described by its shape:</p>
+      <p>How sharply it rises on waking, how steadily it falls, and how much is produced in total.</p>
+    </div></article>
+
+    <article class="step"><div class="step-inner">
+      <span class="step-n"></span>
+      <h2><span class="m-num" style="background:#F2B46E">1</span>Cortisol awakening response</h2>
+      <p>The rise in the first 30 to 45 minutes after waking. Researchers think it helps the body get ready for the day ahead.</p>
+      <div class="tags"><span class="chip status-ok cur">Clear rise · typical</span><span class="chip status-bad">Smaller rise · blunted</span></div>
+    </div></article>
+
+    <article class="step"><div class="step-inner">
+      <span class="step-n"></span>
+      <h2><span class="m-num" style="background:#E9E4D8">2</span>Diurnal slope</h2>
+      <p>The drop from the morning peak to the evening low (D&nbsp;−&nbsp;N). A steady decline is part of winding down for sleep.</p>
+      <div class="tags"><span class="chip status-ok cur">Clear drop · typical</span><span class="chip status-bad">Little drop · flatter</span></div>
+    </div></article>
+
+    <article class="step"><div class="step-inner">
+      <span class="step-n"></span>
+      <h2><span class="m-num" style="background:#B7D3AE">3</span>Area under the curve</h2>
+      <p>The whole shaded area: roughly how much cortisol is made across the day.</p>
+      <div class="tags"><span class="chip status-ok cur">Mid range · typical</span><span class="chip status-bad">Higher or lower total</span></div>
+    </div></article>
+
+    <article class="step"><div class="step-inner">
+      <span class="step-n"></span>
+      <h2>When the curve flattens</h2>
+      <p>A smaller rise, little drop across the day and a lower total. In research, flatter curves are linked with chronic stress and poorer health on average.</p>
+      <p class="note">Switch between the typical and flatter patterns with the toggle above the chart.</p>
+    </div></article>
+
+    <article class="step"><div class="step-inner">
+      <span class="step-n"></span>
+      <h2>Research measures, not a diagnosis</h2>
+      <p>Salivary cortisol curves vary from day to day with sleep, the timing of each sample and how it’s collected. A first sample taken 15 minutes late can miss the morning rise.</p>
+      <p>They aren’t a validated way to diagnose stress-related conditions. If a clinician uses them at all, it’s alongside your history and other tests.</p>
+      <p class="callout"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6.2"/><path d="M8 7.2v4M8 4.9v.1"/></svg><span>Cortisol disorders such as Cushing’s syndrome and adrenal insufficiency are diagnosed with specific, standardized blood, urine or late-night saliva tests.</span></p>
+      <p class="src"><b>Sources</b>Stalder et al., <i>Psychoneuroendocrinology</i> 2016 (awakening-response sampling guidelines); Adam et al., <i>Psychoneuroendocrinology</i> 2017; Endocrine Society clinical practice guidelines on Cushing’s syndrome (2008) and adrenal insufficiency (2016).</p>
+    </div></article>
+  </div>
+</section>
+
+<div id="end"></div>
+<div id="foot"></div>
+<script src="assets/js/glossary.js"></script>
+<script src="assets/js/site.js"></script>
+<script>
+(function () {
+  var P = {
+    healthy: { curve: 'M 40 190 C 70 130, 120 82, 170 80 C 380 90, 620 280, 860 318', rise: 'M 40 190 C 70 130, 120 82, 170 80',
+               d: [170, 80], n: [860, 318], b2: [515, 172], c: '#B7D3AE',
+               note: 'Typical pattern: a clear rise, a steady fall and a mid-range total.' },
+    flat:    { curve: 'M 40 240 C 70 232, 120 224, 170 222 C 380 226, 620 250, 860 268', rise: 'M 40 240 C 70 232, 120 224, 170 222',
+               d: [170, 222], n: [860, 268], b2: [515, 222], c: '#EE8B75',
+               note: 'Flatter pattern: a smaller rise, little drop and a lower total.' }
+  };
+  var $ = function (id) { return document.getElementById(id); };
+  var scope = $('story'), stage = $('stage'), curve = $('curve');
+  var state = null, pos = { d: P.healthy.d.slice(), n: P.healthy.n.slice(), b2: P.healthy.b2.slice() };
+  function setPattern(k, instant) {
+    if (k === state) return;
+    var first = state === null;
+    state = k;
+    var S = P[k], dur = first || instant ? 0 : 1000;
+    if (!first) { curve.classList.remove('draw'); curve.style.strokeDasharray = 'none'; }
+    HX.morph(curve, S.curve, dur); HX.morph($('rise'), S.rise, dur); HX.morph($('aucFill'), S.curve + ' L 860 350 L 40 350 Z', dur);
+    $('ghost').setAttribute('opacity', k === 'flat' ? '1' : '0');
+    var from = JSON.parse(JSON.stringify(pos));
+    HX.tween(dur, function (e) {
+      ['d', 'n', 'b2'].forEach(function (key) { pos[key] = [from[key][0] + (S[key][0] - from[key][0]) * e, from[key][1] + (S[key][1] - from[key][1]) * e]; });
+      $('dPt').setAttribute('cy', pos.d[1]); $('nPt').setAttribute('cy', pos.n[1]);
+      $('dLab').setAttribute('y', pos.d[1] - 14); $('nLab').setAttribute('y', pos.n[1] + 26);
+      $('slope').setAttribute('y1', pos.d[1]); $('slope').setAttribute('y2', pos.n[1]);
+      var b = $('b2'); b.querySelector('circle').setAttribute('cy', pos.b2[1]); b.querySelector('text').setAttribute('y', pos.b2[1] + 6);
+    });
+    document.querySelectorAll('.step .tags').forEach(function (t) {
+      t.querySelector('.status-ok').classList.toggle('cur', k === 'healthy');
+      t.querySelector('.status-bad').classList.toggle('cur', k === 'flat');
+    });
+    stage.style.setProperty('--rc', S.c);
+    $('pText').textContent = S.note;
+    document.querySelectorAll('.gseg button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-p') === k); });
+  }
+  document.querySelectorAll('.gseg button').forEach(function (b) {
+    b.addEventListener('click', function (e) { e.stopPropagation(); setPattern(b.getAttribute('data-p')); });
+  });
+  var focus = [null, 'car', 'slope', 'auc', null, null];
+  HX.story({ onStep: function (i) {
+    setPattern(i >= 4 ? 'flat' : 'healthy');
+    scope._links.setBase(focus[i]);
+  } });
+})();
+</script>
+</body>
+</html>

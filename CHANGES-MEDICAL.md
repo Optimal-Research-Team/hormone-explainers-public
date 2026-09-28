@@ -1,0 +1,213 @@
+# Medical changes: public version
+
+Every medical-content edit made when the internal patient version (`../hormone-explainers`) was adapted for the public site, with the reason and the source for each. Source keys such as **[Adam 2017]** point to the reference list at the end.
+
+Scope: the owner asked for medical accuracy, not a regulatory scrub. Hormone names, physiology and the original visuals stay. Claims were corrected where they overstated the evidence, described something that isn't a recognized diagnosis, or named a treatment that doesn't fit the indication.
+
+This review was done against the published sources below. It has not yet been signed off by a clinician. Get a clinician sign-off before promoting the site, and add `reviewedBy` / `lastReviewed` to the JSON-LD once that's done (see `tools/seo-head.py`).
+
+---
+
+## Site-wide
+
+| Where | Change | Reason | Source |
+|---|---|---|---|
+| Footer, every page | Added: "This is general education, not medical advice. It can't account for your health history, medicines or test results. Talk with a qualified clinician before you start, stop or change any treatment. In an emergency, call 911." | Public audience; the internal version assumed a clinician was in the room. | n/a |
+| Landing hero | Added "General education, not medical advice." under the calls to action, plus an "About this series" section that restates it. | Same as above. | n/a |
+| Landing hero caption, night | "melatonin is high while cortisol sits at its lowest point" → "melatonin peaks in the small hours. Cortisol bottoms out around midnight, then starts to climb before dawn." | Cortisol's low point is around midnight; it rises through the early morning before waking, which the chart already draws. | [Leproult 1997], [McEwen 2007] |
+| Landing hero caption, morning | "melatonin stays switched off" → "melatonin fades away" | Melatonin falls toward morning rather than being off. | [Gooley 2011] |
+| Landing and chapter-02 card | "How HPA dysfunction evolves / flattens in four stages" → "How chronic stress can change the cortisol curve / Research links long-term stress to flatter daily curves." | See chapter 02. | [Adam 2017] |
+| Chapter 06 footer note | Kept: "Medication names are for discussion with your provider, not a recommendation." | Owner requirement. | n/a |
+| Clinician-only framing | "Present in the exam room", the Present button and the "For the exam room" landing section are switched off (`CONFIG.presentMode`, `CONFIG.examRoom` in `site.js`). "In the order we usually walk through them with you" → "in an order that builds from how cortisol works to where to start". | Not meaningful to a public reader. | n/a |
+
+## Chapter 01: Cortisol has a dose-dependent effect
+
+| Where | Before | After | Reason | Source |
+|---|---|---|---|---|
+| Step 1 | (none) | "The two ends of the curve are recognized medical conditions, not everyday stress." | Readers could mistake everyday stress for the extremes on the curve. | [Bornstein 2016], [Nieman 2008] |
+| Step 2, electrolytes | "↓ Na⁺, ↑ K⁺" | "↓ Na⁺; ↑ K⁺ when aldosterone is also low, as in Addison's disease" | High potassium comes from aldosterone deficiency, which occurs in primary adrenal insufficiency. Cortisol deficiency alone (secondary insufficiency) causes low sodium but not high potassium. | [Bornstein 2016] |
+| Step 2 | "Anorexia" | "Loss of appetite" | Plain language; "anorexia" reads as the eating disorder. | n/a |
+| Step 2 | "Vasodilation, ↓ blood pressure" / "Malaise, fatigue" | Added "dizziness on standing" and "weakness" | Common presenting features. | [Bornstein 2016] |
+| Step 2 | (none) | Note: "This is adrenal insufficiency. It is diagnosed with blood tests and treated by replacing the missing hormone." | Names the condition and makes clear it is a diagnosis, not a lifestyle state. | [Bornstein 2016] |
+| Step 4 | "Memory impairment, anxiety, depression" / "↑ glucose, insulin resistance, visceral fat, atherosclerosis" | Added "poor sleep" and "high blood pressure" | Insomnia and hypertension are standard features of cortisol excess. | [Nieman 2008] |
+| Step 4 | (none) | Note: "This is Cushing's syndrome, most often caused by long-term steroid medicines. It is diagnosed with specific blood, urine or late-night saliva tests." | Names the condition; steroid medicines are its commonest cause. | [Nieman 2008] |
+| Step 5 | (none) | "Everyday stress moves cortisol up and down within this band. Sleep, daily rhythm and stress load all shape where you sit in it." | Keeps readers from applying the extremes to themselves. | [McEwen 2007] |
+
+## Chapter 02: How HPA dysfunction evolves → How chronic stress can change the cortisol curve
+
+| Where | Before | After | Reason | Source |
+|---|---|---|---|---|
+| Title and lede | "How HPA dysfunction evolves. The daily cortisol curve flattens in stages." | "How chronic stress can change the cortisol curve. Research links long-term stress and poorer health with a flatter version of that curve." | The four-stage progression (normal → acute → chronic → exhaustion) is the "adrenal fatigue" model, which isn't supported. What *is* supported is that flatter diurnal slopes are associated with chronic stress and poorer health. | [Adam 2017], [Cadegiani 2016] |
+| Stage names (timeline, readout, legend, overlay) | Normal · Acute · Chronic · Exhaustion; "Stage N of 4"; caption "Time under chronic stress" | Typical · Short-term · Longer-term · Flattened; "Pattern N of 4"; caption "Patterns seen in research, not fixed stages" | Neutral descriptions of patterns, not a clinical staging. | [Adam 2017], [Fries 2005] |
+| Cover caption | "Gradual depletion" | "A rhythm under strain" | "Depletion" implies the adrenal glands run out, which isn't what happens. | [Cadegiani 2016] |
+| Curve shapes | Acute: high all day and still high at bedtime. Chronic and Exhaustion: uniformly low and flat. | Short-term: higher through the day, still falling. Longer-term: smaller morning rise and higher evening level (the flatter-slope pattern). Flattened: low and flat. | Matches the patterns reported in research: stress raises output while the rhythm persists; chronic stress mainly flattens the slope; some groups show low, flat curves. | [Adam 2017], [Fries 2005] |
+| Step 1 | "The HPA response is self-limiting through negative feedback." | Adds "Both are normal, healthy responses." | Stress responses are adaptive, not pathology. | [McEwen 2007] |
+| Step 2 | "A sharp morning rise, then a steady decline… switches off CRH" | "Cortisol climbs quickly in the first 30 to 45 minutes after waking, then falls across the day to its low point around bedtime… switches off CRH and ACTH" | Adds the actual timing of the awakening response; feedback acts at both hypothalamus and pituitary. | [Stalder 2016] |
+| Step 3 | "Sympathetic hyperactivation drives exaggerated cortisol release. Cortisol stays high all day, yet its helpful actions begin to decline." | "During a demanding stretch, both stress systems work harder and cortisol can run higher… This is a normal, adaptive response. The rhythm usually settles once the pressure eases." | "Helpful actions begin to decline" is unsupported as a general stage. | [McEwen 2007] |
+| Step 4, AVP | "CRH stops being the driver… Arginine vasopressin (AVP) takes over, and cortisol cannot switch it off." | "Animal studies suggest that under repeated stress a second brain signal, arginine vasopressin (AVP), takes a bigger part in driving ACTH. How far this applies in people is still unclear." | The AVP shift is mostly shown in rodent models of repeated stress; it has not been established as a human stage. | [Aguilera 2000] |
+| Step 5 | "Stage 4 · Exhaustion. HPA reactivity fails and the cortisol response fades. The sympathetic system compensates…: wired, but depleted." | "Flattened rhythm. Some studies find lower, flatter curves in people with long-standing stress, PTSD or chronic fatigue syndrome, though results are mixed. A flat curve is a pattern, not a diagnosis. It doesn't mean the adrenal glands have 'run out'." + "Adrenal fatigue isn't a recognized medical diagnosis (Endocrine Society)." | "Exhaustion" as a clinical stage is the adrenal-fatigue construct. Hypocortisolism is reported in some conditions, inconsistently. | [Endocrine Society AF], [Cadegiani 2016], [Fries 2005] |
+| Step 6 | "The curve flattens in stages… from a clear morning peak to a flat line." | "Patterns seen in research… not stages everyone passes through. A 2017 meta-analysis linked flatter daytime cortisol slopes with poorer mental and physical health. These are group averages." + sources line | States the actual evidence and its limits. | [Adam 2017] |
+
+## Chapter 03: Three ways to measure cortisol
+
+| Where | Before | After | Reason | Source |
+|---|---|---|---|---|
+| Lede | "A single cortisol value says little. What matters is the shape of the daily curve" | "Cortisol changes hour by hour, so researchers often describe the shape of the whole day rather than one value. These three research measures…" | A single timed value *is* diagnostic in some settings (for example a morning cortisol in suspected adrenal insufficiency). CAR, slope and AUC are research measures. | [Bornstein 2016], [Stalder 2016] |
+| Labels | Toggle "Healthy / Flattened"; chips "Sharp rise · healthy / Blunted · concerning", "Clear drop · healthy / Flat · concerning", "Mid range · healthy / Very high or low · concerning"; readouts "Healthy pattern… / Flattened pattern…" | Toggle "Typical / Flatter"; chips "Clear rise · typical / Smaller rise · blunted", "Clear drop · typical / Little drop · flatter", "Mid range · typical / Higher or lower total"; readouts "Typical pattern… / Flatter pattern…". "Concerning" chips recoloured from alarm red to neutral bark. | These measures don't give diagnostic verdicts. | [Stalder 2016], [Adam 2017] |
+| Step 2, CAR | "It shows how well the HPA axis can mobilise energy for the day." | "The rise in the first 30 to 45 minutes after waking. Researchers think it helps the body get ready for the day ahead." | Function of the CAR is a hypothesis, not a measurement of HPA capacity. | [Stalder 2016] |
+| Step 5 | "each of the three measures now reads as concerning" | "In research, flatter curves are linked with chronic stress and poorer health on average." | Association, not verdict. | [Adam 2017] |
+| New step 6 | (none) | "Research measures, not a diagnosis": curves vary day to day with sleep, sample timing and collection; a first sample 15 minutes late can miss the morning rise; not a validated way to diagnose stress-related conditions; a clinician uses them, if at all, alongside history and other tests. Callout: real cortisol disorders are diagnosed with specific, standardized blood, urine or late-night saliva tests. | Owner requirement, and the core limitation of home saliva curves. Late-night salivary cortisol is validated for Cushing's screening, which is why saliva is still listed. | [Stalder 2016], [Nieman 2008], [Bornstein 2016] |
+
+## Chapter 04: Cortisol's partners
+
+| Where | Before | After | Reason | Source |
+|---|---|---|---|---|
+| Oxytocin | "↓ ACTH and ↓ cortisol, at rest and under stress; dose dependent." | "Can ↓ ACTH and ↓ cortisol, especially under stress… Clear in animal studies; human results are mixed." | A meta-analysis of intranasal oxytocin found no consistent overall effect on cortisol in humans. | [Heinrichs 2003], [Cardoso 2014] |
+| ANP | "↓ CRH, ↓ ACTH, ↓ cortisol." | "A hormone released by the heart: ↓ CRH, ↓ ACTH and ↓ cortisol in studies." | Shown in experimental human and animal studies; not a regulator readers can act on. | [Wiedemann 2000] |
+| Beta-endorphin | "↓ ACTH, ↓ cortisol." | "One of the body's own opioids: ↓ ACTH, ↓ cortisol." | Accurate; context added (opioids suppress the HPA axis). | [de Vries 2020] |
+| Buffering step | "its downstream actions are buffered" | "some of its downstream actions are offset. DHEA and testosterone tend to build tissue up where cortisol breaks it down, which is why researchers look at the balance between them." | "Buffered" overstated a mostly experimental anti-glucocorticoid effect. | [Kalimi 1994] |
+| See-saw step | "When one is high the other should be low. Evening cortisol that stays up keeps melatonin down, and sleep suffers." | "Their daily rhythms run in opposite directions… When cortisol stays up into the evening, for example under stress, sleep tends to suffer." Stressed-evening readout: "melatonin's rise can be blunted". | Opposite daily rhythms are established; evening cortisol directly suppressing melatonin in humans is not. | [Gooley 2011], [Vgontzas 2001] |
+| Last step | "Potentially therapeutic: Several of cortisol's partners are potential treatments." Chips incl. "CBD", "THC · mixed effect". | "Under study: …being studied as ways to calm the stress response." Chips "CBD · early evidence", "THC · can raise cortisol". Callout: "None of these is an established treatment for stress or cortisol. Some are used for other reasons: melatonin for sleep timing, for example, and testosterone for specific hormone conditions." | ANP, beta-endorphin, oxytocin and DHEA are not treatments for stress; acute THC raises cortisol; CBD data are a handful of small studies. | [Ranganathan 2009], [Zuardi 1993], [Nair 2006], [Wierman 2014] |
+
+## Chapter 05: Foundational vs. top-line hormones
+
+| Where | Before | After | Reason | Source |
+|---|---|---|---|---|
+| Lede, step 1, figure label | "Think of your hormones as a tree. If the roots are unwell, treating the leaves will not fix the tree." | "A way to think about it: picture your hormones as a tree…" Step 1: "This is a metaphor, a way to think about priorities, not a map of the body." Figure: "The hormone tree, a metaphor". | Owner requirement: frame explicitly as a metaphor. | n/a |
+| Canopy step | "the first to suffer when the foundation is off, and often the last to recover" | "In this picture they sit on top of everything below, so problems lower down can show up here too." | No evidence for a fixed order of suffering and recovery. | n/a |
+| Trunk step | "Insulin resistance thickens the trunk the wrong way, driving fat storage, inflammation and imbalances in the sex hormones" | "Insulin resistance is linked to fat stored around the middle, inflammation and shifts in the sex hormones above, such as lower SHBG." | Association rather than one-way causation; names the best-documented link. | [Diamanti-Kandarakis 2012] |
+| Roots step | "Set the pace of metabolism and the stress response for every cell." | "Thyroid hormone and cortisol help set the pace of metabolism and the stress response in almost every tissue. In the metaphor, everything above draws on them." | "Every cell" overstated; metaphor made explicit. | n/a |
+| Stressed-roots step | "The canopy suffers first. Treating the leaves will not fix the tree while the roots stay unwell." | "The canopy can suffer too. Treating only the leaves may not be enough if something lower down, such as untreated thyroid disease, poor sleep or insulin resistance, is also in play. That doesn't mean canopy symptoms have to wait. Menopause symptoms, for example, can be treated directly and effectively." | The original implied sex-hormone treatment won't work until cortisol and thyroid are fixed. Menopausal hormone therapy treats vasomotor symptoms effectively on its own, and this site sits next to The Optimal Menopause Protocol. | [NAMS 2022], [SOGC 422a] |
+| Last step | "Start with the roots. Stabilise cortisol and thyroid first: rhythm, sleep, nutrition and stress load." | "Look after the roots, too. Support the foundations alongside any other care: regular sleep and daily rhythm, nutrition, movement and stress load." Callout: "Thyroid conditions need diagnosis and treatment by a clinician, usually starting with a TSH blood test. If you have symptoms, ask to be checked." | Owner requirement: thyroid disease isn't self-stabilised with lifestyle. TSH is the first-line test. | [ATA/Choosing Wisely] |
+
+## Chapter 06: The hormone cycle and its stop points
+
+Options at each stop are now grouped as **Foundations** (well-supported everyday habits), **Prescription: discuss with a clinician**, and **Limited evidence** (early or mixed research), with a key on step 1.
+
+| Where | Before | After | Reason | Source |
+|---|---|---|---|---|
+| Lede and step 1 | "so a problem in one spreads to the rest" | "so a problem in one can spread to the rest"; "This simplified loop shows…" | The loop is a teaching simplification. | n/a |
+| Stop 1, Sleep | Daridorexant · Lemborexant (Dayvigo) · Doxepin · Glycine · Ashwagandha · Progesterone · Lifestyle | Foundations: Regular sleep and wake times · Morning daylight · CBT for insomnia (first-line). Prescription: Daridorexant · Lemborexant · Low-dose doxepin. Limited evidence: Progesterone (prescription) · Glycine · Ashwagandha. Note: "Ashwagandha has been linked to rare cases of liver injury." | Brand name removed (generic names only). CBT-I is the recommended first treatment for chronic insomnia. Doxepin's insomnia indication is the low dose (3–6 mg). Progesterone for sleep rests on small trials. Glycine and ashwagandha evidence is small and low certainty; ashwagandha has documented rare hepatotoxicity. | [Qaseem 2016], [Edinger 2021], [Sateia 2017], [Schüssler 2008], [NAMS 2022], [Cheah 2021], [Yamadera 2007], [LiverTox], [Björnsson 2020] |
+| Stop 2, Insulin resistance | Metformin · GLP-1 agonists | Foundations: Nutrition · Regular activity · Sleep. Prescription: Metformin · GLP-1 medicines. | Lifestyle is first-line; the medicines are correctly indicated but prescription-only. | [Knowler 2002], [Wharton 2020], [Spiegel 1999] |
+| Stop 3, Cortisol | DHEA · Omega-3 · Rhodiola · Magnesium and B6 · Ashwagandha · Circadian rhythm · Exercise · Lifestyle | Foundations: Consistent daily rhythm · Exercise · Stress-reduction practices. Limited evidence: Ashwagandha · Rhodiola · Omega-3 · Magnesium and B6. Liver-injury note for ashwagandha. | **DHEA removed**: no good evidence as a cortisol tool, and the Endocrine Society advises against routine DHEA. Supplements relabelled as limited evidence. | [Nair 2006], [Wierman 2014], [Hung 2011], [Madison 2021], [Pouteau 2018], [LiverTox] |
+| Stop 4, Mood, fatigue, cognition | SSRI (escitalopram) · Benzodiazepine (alprazolam) · Creatine 5 g/day | Foundations: Talk therapy, such as CBT · Exercise · Sleep. Prescription: SSRI, such as escitalopram. Limited evidence: Creatine. Note: 9-8-8 crisis line. | **Benzodiazepines and alprazolam removed**: not appropriate for mood, fatigue or cognition, and they carry dependence, withdrawal and misuse risk (boxed warning). Psychotherapy and SSRIs are first-line for depression and anxiety. Creatine for cognition and mood has small, inconsistent trials; dose removed so it doesn't read as a recommendation. 9-8-8 is Canada's suicide crisis line, added because this stop discusses depression. | [FDA 2020], [Lam 2024 CANMAT], [Avgerinos 2018], [988] |
+| Stop 5, Estrogen | Progesterone | "When estrogen falls in perimenopause and menopause, hormone therapy is the most effective treatment for hot flashes and night sweats." Prescription: Menopausal hormone therapy · Progesterone (if you have a uterus). Note: "Anyone with a uterus who takes estrogen also needs a progestogen to protect its lining. Whether hormone therapy suits you depends on your age, time since menopause and health history." | Progesterone alone isn't a treatment for low estrogen; its role alongside estrogen is endometrial protection. MHT is the most effective treatment for vasomotor symptoms. | [NAMS 2022], [SOGC 422a] |
+| Stop 6, Melatonin | Light exposure · Tryptophan · B6 · Folate · Magnesium · Exercise · Temperature | Foundations: Morning daylight · Dim evening light · Cool, dark bedroom · Exercise. Limited evidence: Tryptophan · B6, folate and magnesium. | Light timing is the strongest lever on melatonin. Evidence for precursors and cofactors raising melatonin or improving sleep is weak; AASM advises against L-tryptophan for insomnia. | [Gooley 2011], [Sateia 2017] |
+| Last step | "with the tools most often used there" | "with options sorted by the strength of the evidence behind them". Callout keeps "Medication names are for discussion with your provider, not a recommendation." and adds "Supplements can interact with medicines, too." | Owner requirement; supplement interactions are a real safety point. | n/a |
+
+## Chapter 07: Sleep, cortisol and the hormone web
+
+| Where | Before | After | Reason | Source |
+|---|---|---|---|---|
+| Lede, last step | "To improve the whole web, start with sleep." | "Sleep is a good place to start." Last step adds: "Ongoing insomnia or loud snoring with pauses in breathing is worth raising with a clinician: both are common and treatable." | Softer, and points to treatable sleep disorders. | [Qaseem 2016] |
+| 1 · Sleep ↔ Melatonin | "Each supports the other. REM sleep declines with age from mid-life. Start here." | "Melatonin signals night to the body and helps time sleep; light in the evening suppresses it. Melatonin output and deep sleep both tend to decline with age." | Sleep itself doesn't make melatonin; darkness does. Deep (slow-wave) sleep falls most with age; REM changes little. | [Gooley 2011], [Ohayon 2004], [Karasek 2004] |
+| 2 · Sleep ↔ Cortisol | "Less sleep raises ACTH and cortisol, flattens the curve and removes the overnight low. A flat curve is itself a marker of insomnia." | "Short or broken sleep can raise evening cortisol, blunting the usual evening drop, and chronic insomnia is linked with higher cortisol and ACTH around bedtime. High evening cortisol in turn makes sleep lighter and more broken." | "Removes the overnight low" overstated; "a flat curve is a marker of insomnia" is not established. | [Leproult 1997], [Vgontzas 2001] |
+| 3 · Melatonin ↔ Cortisol | "High cortisol means low melatonin. A flat cortisol curve gives a flat melatonin curve." | "Their daily rhythms run in opposite directions… When the body clock is disrupted, by night shifts or bright evening light for example, both rhythms tend to lose their shape." | The one-to-one rule isn't supported; shared circadian disruption is. | [Gooley 2011] |
+| 4 · Sleep ↔ Insulin resistance | "Insulin resistance delays sleep onset and increases snoring." | "Insulin resistance often travels with excess weight and obstructive sleep apnea, which breaks up sleep in turn." | The documented link is via obesity and sleep apnea, not a direct effect on sleep onset. | [Spiegel 1999], [Punjabi 2005] |
+| 5 · Insulin resistance ↔ Cortisol | "More insulin raises ACTH and cortisol and disables the off switch." | "Cortisol raises blood sugar, reduces glucose uptake by muscle and fat, and can blunt β-cell insulin release, so long-term high cortisol promotes insulin resistance. Some studies suggest high insulin can in turn stimulate the stress axis." | Cortisol → insulin resistance is well established; insulin → HPA activation is limited to clamp studies; "disables the off switch" is unsupported. | [Andrews 1999], [Fruehwald-Schultes 1999] |
+| 6 · Insulin resistance → Testosterone | "it raises GnRH and LH and lowers SHBG" | "high insulin boosts androgen production in the ovaries (alongside LH) and lowers SHBG… part of the pattern in polycystic ovary syndrome (PCOS), with acne or excess hair." | Insulin acts directly on ovarian theca cells together with LH; a direct GnRH effect is not well established. | [Diamanti-Kandarakis 2012], [Teede 2023] |
+| 7 · Insulin resistance → Estrogen | "Visceral fat increases aromatase, which raises estrogen." | "Body fat contains aromatase, which turns androgens into estrogen, and lower SHBG leaves more of it free. After menopause, fat tissue becomes the main source of estrogen." | More precise; adds the postmenopausal context. | [Simpson 2003] |
+| 8 · Testosterone ↔ Cortisol | "Testosterone lowers cortisol." | "Testosterone tends to damp the stress axis, shown mainly in animal studies and men. Chronically high cortisol suppresses the reproductive axis and can lower testosterone." | Evidence base stated. | [Viau 2002], [Whirledge 2010] |
+| 9 · Cortisol → Progesterone | "…mainly by disrupting ovulation, and with it allopregnanolone: anxiety, poorer sleep." | "Chronic stress can lower progesterone by disrupting ovulation, since progesterone is made mainly after ovulation. Less progesterone means less allopregnanolone, which may add to anxiety and poorer sleep." | Hedged the downstream mood claim. | [Gordon 2017] |
+| 10 · Estrogen ↔ Cortisol | "Estrogen raises cortisol and CRH and impairs the off switch." | "Oral estrogen, including the pill and oral hormone therapy, raises the protein that carries cortisol, so total cortisol on a blood test reads higher. Animal studies suggest estrogen can amplify the stress response; high cortisol can in turn disrupt the menstrual cycle." | The human finding is the rise in cortisol-binding globulin with oral estrogen (which changes test results); CRH and feedback effects are largely animal data. | [Qureshi 2007], [Whirledge 2010] |
+| 11 · Cortisol, sleep → Mood | "Structural change in the hippocampus, prefrontal cortex and amygdala." | "Long-term high cortisol and poor sleep are linked to changes in brain areas for memory, focus and emotion… Some of these changes can reverse once cortisol returns to normal." | Association, plus the evidence of reversibility. | [McEwen 2007], [Starkman 1999] |
+| 12 · Sex hormones → Mood | (as before) | Adds "Shifting levels, as in perimenopause, can affect mood, sleep and memory." | Relevant, well-documented context. | [NAMS 2022] |
+| Footer note | "Adapted from a hand-drawn clinician sketch." | "Simplified from a clinician's hand-drawn sketch. Lines show relationships reported in research, not how strong they are." | Sets expectations for the diagram. | n/a |
+
+## Chapter 08: The pyramid of interventions
+
+| Where | Before | After | Reason | Source |
+|---|---|---|---|---|
+| Step 1 | "Marketing will tell you the top layer cures all; it only works on top of the very basics." | "Marketing often suggests the top layer is the answer. In practice, the basics do most of the work." | "Only works" is an absolute the evidence doesn't support. | n/a |
+| Layer 1, bedroom | "Dark, cool (16–19 °C) and quiet (under 33 dB)." | "A dark, cool (around 16–19 °C) and quiet bedroom: WHO guidance suggests keeping background noise to about 30 dB, roughly a whisper." | 16–19 °C is a common recommendation and kept. "Under 33 dB" had no source; WHO's bedroom guideline is 30 dB LAeq for continuous noise. | [WHO 1999], [Okamoto-Mizuno 2012] |
+| Layer 1 | "REM sleep ties to cortisol, insulin resistance, mood…" / "Rebuilding the cortisol curve needs morning sunlight and dim evenings." | "Good sleep ties to…" / "Morning daylight and dim evenings anchor the body clock that sets the daily cortisol rhythm." | The links are to sleep overall, not REM specifically; "rebuilding the curve" overstated. | [Leproult 1997], [Spiegel 1999], [Gooley 2011] |
+| Layer 2 | "Basics: hydration, fibre, magnesium, B12, vitamin D, iron, folate." | "Basics: hydration, fibre, and enough magnesium, B12, vitamin D, iron and folate, ideally from food, with testing if a deficiency is suspected." | Avoids implying everyone should supplement. | n/a |
+| Layer 2 | "Mindfulness and connection lift oxytocin, which repairs the HPA axis." | "Mindfulness practice and social connection can reduce perceived stress and support better sleep." | Owner requirement: overclaim. Replaced with what meta-analyses support. | [Khoury 2015], [Rusch 2019], [Cohen 1985] |
+| Layer 3 | "Erratic eating and prolonged fasting can worsen HPA dysfunction. …including GLP-1 or metformin where appropriate." | "Regular meals help keep energy and blood sugar steady; long fasts can raise cortisol, so they don't suit everyone. …food and activity first, then GLP-1 medicines or metformin where appropriate (prescription: discuss with a clinician)." | "HPA dysfunction" isn't a defined diagnosis; prolonged fasting does raise cortisol. Medicines marked as prescription. | [Bergendahl 1996], [Wharton 2020] |
+| Layer 5 | "Effective only on top of everything below." | "Most useful, if at all, once the layers below are in place. Evidence for many supplements is limited, and some interact with medicines." | Overclaim corrected. | n/a |
+| Last step | (none) | Sources line | Shows the evidence behind the numbers. | n/a |
+
+## Glossary (`assets/js/glossary.js`)
+
+| Term | Change | Reason | Source |
+|---|---|---|---|
+| GLP-1 | "A class of medicines that mimic a natural gut hormone" → "Glucagon-like peptide-1: a gut hormone released after eating. Prescription 'GLP-1 medicines' mimic it…" | GLP-1 is the hormone; the medicines are GLP-1 receptor agonists. | [Drucker 2018] |
+| metformin | Adds that it is a prescription medicine for type 2 diabetes and insulin resistance and that it lowers the sugar the liver releases. | Main mechanism was missing. | [Rena 2017] |
+| DHEA | Adds that the body can turn it into testosterone and estrogen and that levels fall with age. | Precision. | [Wierman 2014] |
+| DHEA-S | "The storage form of DHEA" → "DHEA sulfate: the form of DHEA that circulates in much larger amounts and acts as a reservoir." | Precision. | n/a |
+| ANP | Adds "when it is stretched. It helps lower blood pressure and fluid volume." | Context. | n/a |
+| Arginine vasopressin | Adds its main role (helping the kidneys hold on to water). | Context. | n/a |
+| Oxytocin | Adds childbirth and breastfeeding. | Completeness. | n/a |
+| aromatase | "converts testosterone into estrogen" → "converts androgens such as testosterone into estrogen" | It also converts androstenedione to estrone. | [Simpson 2003] |
+| catabolism | "Breaking tissue down for fuel." → "Breaking down stored fuel and tissue, such as muscle protein, for energy." | Precision. | n/a |
+| Osteoporosis | "Thinning, weaker bones." → "Bones that have lost density and strength, so they break more easily." | Precision. | n/a |
+| New terms | deep sleep, adrenal insufficiency, Addison's disease, aldosterone, Cushing's syndrome, meta-analysis, PTSD, chronic fatigue syndrome, TSH, PCOS, obstructive sleep apnea, progestogen, hormone therapy, perimenopause | Used in the new copy. | [Bornstein 2016], [Nieman 2008], [Teede 2023], [NAMS 2022] |
+
+All other glossary entries were checked and left unchanged.
+
+---
+
+## References
+
+- **[Adam 2017]** Adam EK, Quinn ME, Tavernier R, et al. Diurnal cortisol slopes and mental and physical health outcomes: a systematic review and meta-analysis. *Psychoneuroendocrinology.* 2017;83:25–41.
+- **[Aguilera 2000]** Aguilera G, Rabadan-Diehl C. Vasopressinergic regulation of the hypothalamic–pituitary–adrenal axis: implications for stress adaptation. *Regul Pept.* 2000;96(1–2):23–29.
+- **[Andrews 1999]** Andrews RC, Walker BR. Glucocorticoids and insulin resistance: old hormones, new targets. *Clin Sci.* 1999;96(5):513–523.
+- **[ATA/Choosing Wisely]** American Thyroid Association patient resources on thyroid function tests; Choosing Wisely Canada, thyroid testing recommendations (TSH as the first-line test).
+- **[Avgerinos 2018]** Avgerinos KI, Spyrou N, Bougioukas KI, Kapogiannis D. Effects of creatine supplementation on cognitive function of healthy individuals: a systematic review of randomized controlled trials. *Exp Gerontol.* 2018;108:166–173.
+- **[Bergendahl 1996]** Bergendahl M, Vance ML, Iranmanesh A, Thorner MO, Veldhuis JD. Fasting as a metabolic stress paradigm selectively amplifies cortisol secretory burst mass and delays the time of maximal nyctohemeral cortisolemia in healthy men. *J Clin Endocrinol Metab.* 1996;81(2):692–699.
+- **[Björnsson 2020]** Björnsson HK, Björnsson ES, Avula B, et al. Ashwagandha-induced liver injury: a case series from Iceland and the US Drug-Induced Liver Injury Network. *Liver Int.* 2020;40(4):825–829.
+- **[Bornstein 2016]** Bornstein SR, Allolio B, Arlt W, et al. Diagnosis and treatment of primary adrenal insufficiency: an Endocrine Society clinical practice guideline. *J Clin Endocrinol Metab.* 2016;101(2):364–389.
+- **[Cadegiani 2016]** Cadegiani FA, Kater CE. Adrenal fatigue does not exist: a systematic review. *BMC Endocr Disord.* 2016;16:48.
+- **[Cardoso 2014]** Cardoso C, Kingdon D, Ellenbogen MA. A meta-analytic review of the impact of intranasal oxytocin administration on cortisol concentrations during laboratory tasks. *Psychoneuroendocrinology.* 2014;49:161–170.
+- **[Cheah 2021]** Cheah KL, Norhayati MN, Husniati Yaacob L, Abdul Rahman R. Effect of Ashwagandha (*Withania somnifera*) extract on sleep: a systematic review and meta-analysis. *PLoS One.* 2021;16(9):e0257843.
+- **[Cohen 1985]** Cohen S, Wills TA. Stress, social support, and the buffering hypothesis. *Psychol Bull.* 1985;98(2):310–357.
+- **[de Vries 2020]** de Vries F, Bruin M, Lobatto DJ, et al. Opioids and their endocrine effects: a systematic review and meta-analysis. *J Clin Endocrinol Metab.* 2020;105(4):1020–1029.
+- **[Drucker 2018]** Drucker DJ. Mechanisms of action and therapeutic application of glucagon-like peptide-1. *Cell Metab.* 2018;27(4):740–756.
+- **[Edinger 2021]** Edinger JD, Arnedt JT, Bertisch SM, et al. Behavioral and psychological treatments for chronic insomnia disorder in adults: an American Academy of Sleep Medicine clinical practice guideline. *J Clin Sleep Med.* 2021;17(2):255–262.
+- **[Endocrine Society AF]** Endocrine Society, Hormone Health Network patient resource "Adrenal Fatigue": adrenal fatigue is not a real medical condition.
+- **[FDA 2020]** US Food and Drug Administration. Drug Safety Communication: FDA requiring Boxed Warning updated to improve safe use of benzodiazepine drug class (abuse, misuse, addiction, physical dependence and withdrawal reactions). 23 September 2020.
+- **[Fries 2005]** Fries E, Hesse J, Hellhammer J, Hellhammer DH. A new view on hypocortisolism. *Psychoneuroendocrinology.* 2005;30(10):1010–1016.
+- **[Fruehwald-Schultes 1999]** Fruehwald-Schultes B, Kern W, Bong W, et al. Supraphysiological hyperinsulinemia acutely increases hypothalamic-pituitary-adrenal secretory activity in humans. *J Clin Endocrinol Metab.* 1999;84(9):3041–3046.
+- **[Gooley 2011]** Gooley JJ, Chamberlain K, Smith KA, et al. Exposure to room light before bedtime suppresses melatonin onset and shortens melatonin duration in humans. *J Clin Endocrinol Metab.* 2011;96(3):E463–E472.
+- **[Gordon 2017]** Gordon CM, Ackerman KE, Berga SL, et al. Functional hypothalamic amenorrhea: an Endocrine Society clinical practice guideline. *J Clin Endocrinol Metab.* 2017;102(5):1413–1439.
+- **[Heinrichs 2003]** Heinrichs M, Baumgartner T, Kirschbaum C, Ehlert U. Social support and oxytocin interact to suppress cortisol and subjective responses to psychosocial stress. *Biol Psychiatry.* 2003;54(12):1389–1398.
+- **[Hung 2011]** Hung SK, Perry R, Ernst E. The effectiveness and efficacy of *Rhodiola rosea* L.: a systematic review of randomized clinical trials. *Phytomedicine.* 2011;18(4):235–244.
+- **[Kalimi 1994]** Kalimi M, Shafagoj Y, Loria R, Padgett D, Regelson W. Anti-glucocorticoid effects of dehydroepiandrosterone (DHEA). *Mol Cell Biochem.* 1994;131(2):99–104.
+- **[Karasek 2004]** Karasek M. Melatonin, human aging, and age-related diseases. *Exp Gerontol.* 2004;39(11–12):1723–1729.
+- **[Khoury 2015]** Khoury B, Sharma M, Rush SE, Fournier C. Mindfulness-based stress reduction for healthy individuals: a meta-analysis. *J Psychosom Res.* 2015;78(6):519–528.
+- **[Knowler 2002]** Diabetes Prevention Program Research Group. Reduction in the incidence of type 2 diabetes with lifestyle intervention or metformin. *N Engl J Med.* 2002;346(6):393–403.
+- **[Lam 2024 CANMAT]** Lam RW, Kennedy SH, Adams C, et al. Canadian Network for Mood and Anxiety Treatments (CANMAT) 2023 update on clinical guidelines for management of major depressive disorder in adults. *Can J Psychiatry.* 2024;69(9):641–687.
+- **[Leproult 1997]** Leproult R, Copinschi G, Buxton O, Van Cauter E. Sleep loss results in an elevation of cortisol levels the next evening. *Sleep.* 1997;20(10):865–870.
+- **[LiverTox]** LiverTox: Clinical and Research Information on Drug-Induced Liver Injury. "Ashwagandha." National Institute of Diabetes and Digestive and Kidney Diseases.
+- **[Madison 2021]** Madison AA, Belury MA, Andridge R, et al. Omega-3 supplementation and stress reactivity of cellular aging biomarkers: an ancillary substudy of a randomized, controlled trial in midlife adults. *Mol Psychiatry.* 2021;26(7):3034–3042.
+- **[McEwen 2007]** McEwen BS. Physiology and neurobiology of stress and adaptation: central role of the brain. *Physiol Rev.* 2007;87(3):873–904.
+- **[Nair 2006]** Nair KS, Rizza RA, O'Brien P, et al. DHEA in elderly women and DHEA or testosterone in elderly men. *N Engl J Med.* 2006;355(16):1647–1659.
+- **[NAMS 2022]** The 2022 hormone therapy position statement of The North American Menopause Society. *Menopause.* 2022;29(7):767–794.
+- **[Nieman 2008]** Nieman LK, Biller BM, Findling JW, et al. The diagnosis of Cushing's syndrome: an Endocrine Society clinical practice guideline. *J Clin Endocrinol Metab.* 2008;93(5):1526–1540.
+- **[Ohayon 2004]** Ohayon MM, Carskadon MA, Guilleminault C, Vitiello MV. Meta-analysis of quantitative sleep parameters from childhood to old age in healthy individuals. *Sleep.* 2004;27(7):1255–1273.
+- **[Okamoto-Mizuno 2012]** Okamoto-Mizuno K, Mizuno K. Effects of thermal environment on sleep and circadian rhythm. *J Physiol Anthropol.* 2012;31:14.
+- **[Pouteau 2018]** Pouteau E, Kabir-Ahmadi M, Noah L, et al. Superiority of magnesium and vitamin B6 over magnesium alone on severe stress in healthy adults with low magnesemia: a randomized, single-blind clinical trial. *PLoS One.* 2018;13(12):e0208454.
+- **[Punjabi 2005]** Punjabi NM, Polotsky VY. Disorders of glucose metabolism in sleep apnea. *J Appl Physiol.* 2005;99(5):1998–2007.
+- **[Qaseem 2016]** Qaseem A, Kansagara D, Forciea MA, et al. Management of chronic insomnia disorder in adults: a clinical practice guideline from the American College of Physicians. *Ann Intern Med.* 2016;165(2):125–133.
+- **[Qureshi 2007]** Qureshi AC, Bahri A, Breen LA, et al. The influence of the route of oestrogen administration on serum levels of cortisol-binding globulin and total cortisol. *Clin Endocrinol.* 2007;66(5):632–635.
+- **[Ranganathan 2009]** Ranganathan M, Braley G, Pittman B, et al. The effects of cannabinoids on serum cortisol and prolactin in humans. *Psychopharmacology.* 2009;203(4):737–744.
+- **[Rena 2017]** Rena G, Hardie DG, Pearson ER. The mechanisms of action of metformin. *Diabetologia.* 2017;60(9):1577–1585.
+- **[Rusch 2019]** Rusch HL, Rosario M, Levison LM, et al. The effect of mindfulness meditation on sleep quality: a systematic review and meta-analysis of randomized controlled trials. *Ann N Y Acad Sci.* 2019;1445(1):5–16.
+- **[Sateia 2017]** Sateia MJ, Buysse DJ, Krystal AD, Neubauer DN, Heald JL. Clinical practice guideline for the pharmacologic treatment of chronic insomnia in adults: an American Academy of Sleep Medicine clinical practice guideline. *J Clin Sleep Med.* 2017;13(2):307–349.
+- **[Schüssler 2008]** Schüssler P, Kluge M, Yassouridis A, et al. Progesterone reduces wakefulness in sleep EEG and has no effect on cognition in healthy postmenopausal women. *Psychoneuroendocrinology.* 2008;33(8):1124–1131.
+- **[Simpson 2003]** Simpson ER. Sources of estrogen and their importance. *J Steroid Biochem Mol Biol.* 2003;86(3–5):225–230.
+- **[SOGC 422a]** Yuksel N, Evaniuk D, Huang L, et al. Guideline No. 422a: Menopause: vasomotor symptoms, prescription therapeutic agents, complementary and alternative medicine, nutrition, and lifestyle. *J Obstet Gynaecol Can.* 2021;43(10):1188–1204.
+- **[Spiegel 1999]** Spiegel K, Leproult R, Van Cauter E. Impact of sleep debt on metabolic and endocrine function. *Lancet.* 1999;354(9188):1435–1439.
+- **[Stalder 2016]** Stalder T, Kirschbaum C, Kudielka BM, et al. Assessment of the cortisol awakening response: expert consensus guidelines. *Psychoneuroendocrinology.* 2016;63:414–432.
+- **[Starkman 1999]** Starkman MN, Giordani B, Gebarski SS, et al. Decrease in cortisol reverses human hippocampal atrophy following treatment of Cushing's disease. *Biol Psychiatry.* 1999;46(12):1595–1602.
+- **[Teede 2023]** Teede HJ, Tay CT, Laven JJE, et al. Recommendations from the 2023 international evidence-based guideline for the assessment and management of polycystic ovary syndrome. *J Clin Endocrinol Metab.* 2023;108(10):2447–2469.
+- **[Vgontzas 2001]** Vgontzas AN, Bixler EO, Lin HM, et al. Chronic insomnia is associated with nyctohemeral activation of the hypothalamic-pituitary-adrenal axis. *J Clin Endocrinol Metab.* 2001;86(8):3787–3794.
+- **[Viau 2002]** Viau V. Functional cross-talk between the hypothalamic-pituitary-gonadal and -adrenal axes. *J Neuroendocrinol.* 2002;14(6):506–513.
+- **[Wharton 2020]** Wharton S, Lau DCW, Vallis M, et al. Obesity in adults: a clinical practice guideline. *CMAJ.* 2020;192(31):E875–E891.
+- **[Whirledge 2010]** Whirledge S, Cidlowski JA. Glucocorticoids, stress, and fertility. *Minerva Endocrinol.* 2010;35(2):109–125.
+- **[WHO 1999]** World Health Organization. *Guidelines for Community Noise.* Geneva: WHO; 1999 (bedrooms: 30 dB LAeq for continuous background noise).
+- **[Wiedemann 2000]** Wiedemann K, Jahn H, Kellner M. Effects of natriuretic peptides upon hypothalamo-pituitary-adrenocortical system activity and anxiety behaviour. *Exp Clin Endocrinol Diabetes.* 2000;108(1):5–13.
+- **[Wierman 2014]** Wierman ME, Arlt W, Basson R, et al. Androgen therapy in women: a reappraisal: an Endocrine Society clinical practice guideline. *J Clin Endocrinol Metab.* 2014;99(10):3489–3510.
+- **[Yamadera 2007]** Yamadera W, Inagawa K, Chiba S, et al. Glycine ingestion improves subjective sleep quality in human volunteers, correlating with polysomnographic changes. *Sleep Biol Rhythms.* 2007;5(2):126–131.
+- **[Zuardi 1993]** Zuardi AW, Guimarães FS, Moreira AC. Effect of cannabidiol on plasma prolactin, growth hormone and cortisol in human volunteers. *Braz J Med Biol Res.* 1993;26(2):213–217.
+- **[988]** 9-8-8 Suicide Crisis Helpline (Canada), launched 30 November 2023; call or text 9-8-8.

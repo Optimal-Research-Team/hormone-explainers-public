@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://optimal-research-team.github.io/hormone-explainers-public/sitemap.xml

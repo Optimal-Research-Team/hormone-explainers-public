@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- seo:start -->
+<title>Chronic stress and the daily cortisol curve · Optimal</title>
+<meta name="description" content="How long-term stress can flatten the daily cortisol rhythm, what research shows, and why adrenal fatigue isn’t a recognized diagnosis. Chapter 2 of 8.">
+<link rel="canonical" href="https://optimal-research-team.github.io/hormone-explainers-public/02-hpa-dysfunction.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_CA">
+<meta property="og:site_name" content="Optimal · Hormone Explainers">
+<meta property="og:title" content="How chronic stress can change the cortisol curve · Hormone Explainers">
+<meta property="og:description" content="How long-term stress can flatten the daily cortisol rhythm, what research shows, and why adrenal fatigue isn’t a recognized diagnosis. Chapter 2 of 8.">
+<meta property="og:url" content="https://optimal-research-team.github.io/hormone-explainers-public/02-hpa-dysfunction.html">
+<meta property="og:image" content="https://optimal-research-team.github.io/hormone-explainers-public/assets/og/02.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="How chronic stress can change the cortisol curve: an illustrated diagram from Optimal’s hormone explainers">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How chronic stress can change the cortisol curve · Hormone Explainers">
+<meta name="twitter:description" content="How long-term stress can flatten the daily cortisol rhythm, what research shows, and why adrenal fatigue isn’t a recognized diagnosis. Chapter 2 of 8.">
+<meta name="twitter:image" content="https://optimal-research-team.github.io/hormone-explainers-public/assets/og/02.jpg">
+<meta name="twitter:image:alt" content="How chronic stress can change the cortisol curve: an illustrated diagram from Optimal’s hormone explainers">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://optimal-research-team.github.io/hormone-explainers-public/#site","name":"Hormone Explainers","url":"https://optimal-research-team.github.io/hormone-explainers-public/","inLanguage":"en-CA","publisher":{"@id":"https://beoptimal.ca/#clinic"}},{"@type":"MedicalClinic","@id":"https://beoptimal.ca/#clinic","name":"Optimal Health Clinic","url":"https://beoptimal.ca","logo":"https://optimal-research-team.github.io/hormone-explainers-public/assets/img/optimal-wordmark-green.png","telephone":"+1-437-370-0291","email":"care@beoptimal.ca","address":{"@type":"PostalAddress","streetAddress":"630 Huronia Road, Unit 5","addressLocality":"Barrie","addressRegion":"ON","postalCode":"L4N 0W5","addressCountry":"CA"}},{"@type":"MedicalWebPage","@id":"https://optimal-research-team.github.io/hormone-explainers-public/02-hpa-dysfunction.html#page","url":"https://optimal-research-team.github.io/hormone-explainers-public/02-hpa-dysfunction.html","name":"How chronic stress can change the cortisol curve","headline":"How chronic stress can change the cortisol curve","description":"How long-term stress can flatten the daily cortisol rhythm, what research shows, and why adrenal fatigue isn’t a recognized diagnosis. Chapter 2 of 8.","inLanguage":"en-CA","audience":{"@type":"MedicalAudience","audienceType":"Patient"},"specialty":"https://schema.org/Endocrine","about":[{"@type":"MedicalEntity","name":"Cortisol"},{"@type":"MedicalEntity","name":"Chronic stress"},{"@type":"MedicalEntity","name":"HPA axis"},{"@type":"MedicalEntity","name":"Circadian rhythm"}],"image":"https://optimal-research-team.github.io/hormone-explainers-public/assets/og/02.jpg","dateModified":"2026-09-28","isPartOf":{"@id":"https://optimal-research-team.github.io/hormone-explainers-public/#site"},"publisher":{"@id":"https://beoptimal.ca/#clinic"},"position":2,"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hormone Explainers","item":"https://optimal-research-team.github.io/hormone-explainers-public/"},{"@type":"ListItem","position":2,"name":"How chronic stress can change the cortisol curve","item":"https://optimal-research-team.github.io/hormone-explainers-public/02-hpa-dysfunction.html"}]}}]}</script>
+<!-- seo:end -->
+<meta name="theme-color" content="#FFFCF7">
+<link rel="icon" href="assets/img/symbol-green.png">
+<script>document.documentElement.classList.add('js');if(/[?&]still/.test(location.search))document.documentElement.classList.add('still');if(/[?&]og/.test(location.search))document.documentElement.classList.add('og')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Public+Sans:ital,wght@0,300..700;1,400..500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+.stage { --sc: #B7D3AE; }
+.cur-line { stroke: var(--sc); transition: stroke .5s var(--ease), opacity .5s var(--ease); }
+.cur-stop { stop-color: var(--sc); transition: stop-color .5s var(--ease); }
+.end-dot { stroke: var(--sc); transition: stroke .5s var(--ease); }
+.ghost, .overlay, .cur { transition: opacity .6s var(--ease); }
+.tl { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); margin: 0 22px; }
+.tl-track { position: absolute; left: 12.5%; right: 12.5%; top: 8px; height: 2px; border-radius: 2px; background: var(--l-hair); }
+.tl-track i { display: block; height: 100%; width: 0; border-radius: 2px; background: linear-gradient(90deg, #B7D3AE, var(--sc)); transition: width .8s var(--ease); }
+.tl button { appearance: none; border: 0; background: none; cursor: pointer; display: grid; justify-items: center; gap: 8px; padding: 0 2px; font-size: 12.5px; font-weight: 500; color: var(--l-dim); transition: color .3s var(--ease); }
+.tl button span { width: 18px; height: 18px; border-radius: 50%; background: #111D10; border: 2px solid var(--l-faint); display: grid; place-items: center; transition: border-color .4s var(--ease), transform .4s var(--spring); }
+.tl button span::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--c); transform: scale(0); transition: transform .4s var(--spring); }
+.tl button.past span { border-color: var(--c); }
+.tl button.past span::after { transform: scale(.7); }
+.tl button.on { color: var(--cream); }
+.tl button.on span { border-color: var(--c); transform: scale(1.2); }
+.tl button.on span::after { transform: scale(1); }
+.tl-cap { position: relative; z-index: 2; display: flex; align-items: center; gap: 10px; margin: 12px 24px 0; font-size: 10.5px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--l-dim); }
+.tl-cap::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--l-hair), transparent); }
+.legend-row { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.legend-row span { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: rgba(255, 252, 247, .8); }
+.legend-row i { width: 14px; height: 3px; border-radius: 3px; }
+.chain { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
+.chain .arr { color: var(--ink-3); font-size: 13px; }
+.chain .chip { height: 28px; font-size: 12.5px; padding: 0 11px; }
+.sys-t { display: flex; align-items: baseline; gap: 10px; margin-top: 16px; }
+.sys-t b { font-family: var(--display); font-weight: 400; font-size: 1.35rem; color: var(--forest); }
+.sys-t span { font-size: 13px; color: var(--ink-3); }
+@media (max-width: 640px) { .tl button { font-size: 10.5px; } .tl-cap { display: none; } .t-lab { display: none; } }
+</style>
+</head>
+<body data-chapter="2">
+<div id="nav" class="nav-wrap"></div>
+
+<section class="story at-head" id="story" aria-label="How chronic stress can change the daily cortisol curve, step by step">
+  <header class="chapter-head" id="top">
+    <p class="ch-kicker reveal"><span class="num">Chapter 02</span><span>Stress and rhythm</span></p>
+    <h1 class="display reveal" style="--i:1">How chronic stress can <em class="mark">change</em> the cortisol curve</h1>
+    <p class="lede reveal" style="--i:2">Cortisol follows a daily rhythm. Research links long-term stress and poorer health with a flatter version of that curve. Here is what that looks like, and what it doesn’t mean.</p>
+    <div class="head-actions reveal" style="--i:3">
+      <a class="btn btn-primary" href="#story" data-begin>Begin<svg class="go" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.5v11M3.5 9 8 13.5 12.5 9"/></svg></a>
+      <button class="btn-text" type="button" data-present><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.8" y="2.5" width="12.4" height="8.5" rx="1.6"/><path d="M8 11v2.5M5.5 13.5h5"/><path d="M6.8 5.2v3.1L9.3 6.75z" fill="currentColor"/></svg>Present in the exam room</button>
+    </div>
+    <figure class="head-cover-m reveal" style="--i:3" aria-hidden="true"><picture><source srcset="assets/img/chapters/02.webp" type="image/webp"><img src="assets/img/chapters/02.jpg" alt="" width="1536" height="1024" decoding="async"></picture></figure>
+    <nav class="toc reveal" style="--i:4" aria-label="In this chapter"><p class="toc-h"><span>In this chapter</span><span class="num">6 steps</span></p><ol></ol></nav>
+  </header>
+  <div class="stage-col">
+    <figure class="panel-cover" style="--op:94%" aria-hidden="true"><picture><source srcset="assets/img/chapters/02.webp" type="image/webp"><img src="assets/img/chapters/02.jpg" alt="" width="1536" height="1024" decoding="async" fetchpriority="high"></picture><figcaption><span class="num">Plate 02</span>A rhythm under strain</figcaption></figure>
+    <div class="stage" id="stage">
+      <div class="stage-head">
+        <span class="stage-label" id="sLabel">Fig. 02 · The daily cortisol curve, illustrative</span>
+      </div>
+      <div class="stage-canvas">
+        <svg viewBox="0 0 660 400" role="img" aria-label="Illustrative daily cortisol curve for the selected pattern, compared with the typical curve.">
+          <defs>
+            <linearGradient id="gFill" x1="0" x2="0" y1="0" y2="1"><stop class="cur-stop" offset="0" stop-opacity=".32"/><stop class="cur-stop" offset="1" stop-opacity="0"/></linearGradient>
+            <filter id="glow" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <g class="gridl"><line x1="50" y1="112" x2="620" y2="112"/><line x1="50" y1="188" x2="620" y2="188"/><line x1="50" y1="264" x2="620" y2="264"/></g>
+          <line class="ax" x1="50" y1="30" x2="50" y2="340"/>
+          <line class="ax" x1="50" y1="340" x2="624" y2="340"/>
+          <text class="t-lab" x="34" y="36" transform="rotate(-90 34 36)" text-anchor="end">CORTISOL</text>
+          <g class="t-lab"><text x="50" y="372">WAKE</text><text x="330" y="372" text-anchor="middle">MIDDAY</text><text x="610" y="372" text-anchor="end">BED</text></g>
+          <g class="cur" id="cur">
+            <g class="fx-fade" style="--d:.2s"><path id="curFill" fill="url(#gFill)" d="M 50 190 C 57 128, 64 76, 74 70 C 170 76, 330 252, 610 318 L 610 340 L 50 340 Z"/></g>
+            <path class="ghost" id="ghost" d="M 50 190 C 57 128, 64 76, 74 70 C 170 76, 330 252, 610 318" fill="none" stroke="#B7D3AE" stroke-opacity=".6" stroke-width="2" stroke-dasharray="4 7" opacity="0"/>
+            <text class="ghost t-ser t-it" id="ghostLabel" x="150" y="40" font-size="19" fill="#B7D3AE" opacity="0">typical curve</text>
+            <path class="cur-line draw" id="curLine" pathLength="1" style="--d:.2s;--dur:1.4s" d="M 50 190 C 57 128, 64 76, 74 70 C 170 76, 330 252, 610 318" fill="none" stroke-width="5.5" stroke-linecap="round" filter="url(#glow)"/>
+            <g class="fx-pop" style="--d:1.3s"><circle class="end-dot" id="endDot" cx="610" cy="318" r="8" fill="#111D10" stroke-width="4"/></g>
+          </g>
+          <g class="overlay" id="overlay" opacity="0" fill="none" stroke-width="3.5" stroke-linecap="round" filter="url(#glow)">
+            <path d="M 50 190 C 57 128, 64 76, 74 70 C 170 76, 330 252, 610 318" stroke="#B7D3AE"/>
+            <path d="M 50 150 C 57 104, 64 64, 74 60 C 200 66, 400 150, 610 214" stroke="#F2B46E"/>
+            <path d="M 50 214 C 57 178, 64 144, 74 138 C 230 150, 430 204, 610 252" stroke="#EE8B75"/>
+            <path d="M 50 274 C 57 264, 64 256, 74 254 C 230 258, 430 270, 610 284" stroke="#C9CDC2"/>
+          </g>
+        </svg>
+      </div>
+      <div class="tl" id="tl">
+        <div class="tl-track"><i id="tlFill"></i></div>
+        <button type="button" data-s="0" style="--c:#B7D3AE"><span></span>Typical</button>
+        <button type="button" data-s="1" style="--c:#F2B46E"><span></span>Short-term</button>
+        <button type="button" data-s="2" style="--c:#EE8B75"><span></span>Longer-term</button>
+        <button type="button" data-s="3" style="--c:#C9CDC2"><span></span>Flattened</button>
+      </div>
+      <div class="tl-cap">Patterns seen in research, not fixed stages</div>
+      <div class="stage-foot">
+        <div class="readout" id="readout" aria-live="polite"><span class="d"></span><span id="rText"><b>Typical rhythm</b> · Pattern 1 of 4</span></div>
+        <div class="stepper">
+          <button class="sbtn" type="button" data-step-prev aria-label="Previous step"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg></button>
+          <div class="dots"></div>
+          <button class="sbtn" type="button" data-step-next aria-label="Next step"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 3 5 5-5 5"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="present-top"><img src="assets/img/optimal-wordmark-green.png" alt="Optimal"><span class="pt-label">02 · Stress and rhythm</span><button class="present-close" type="button" data-present-exit><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 4l8 8M12 4l-8 8"/></svg>Exit<kbd>Esc</kbd></button></div>
+
+    <article class="step"><div class="step-inner">
+      <span class="step-n"></span>
+      <h2>Two systems respond to stress</h2>
+      <div class="sys-t"><b>SNS</b><span>Seconds</span></div>
+      <div class="chain"><span class="chip">Sympathetic nervous system</span><span class="arr">→</span><span class="chip">Adrenal medulla</span><span class="arr">→</span><span class="chip solid">Adrenaline</span></div>
+      <div class="sys-t"><b>HPA</b><span>Minutes to hours</span></div>
+      <div class="chain"><span class="chip">Hypothalamus</span><span class="arr">→</span><span class="chip">Pituitary</span><span class="arr">→</span><span class="chip">Adrenal cortex</span><span class="arr">→</span><span class="chip solid">Cortisol</span></div>
+      <p>Both are normal, healthy responses. The HPA axis switches itself off through negative feedback. On the right is cortisol’s typical daily rhythm.</p>
+    </div></article>
+
+    <article class="step"><div class="step-inner">
+      <span class="step-n"></span>
+      <h2>Typical rhythm</h2>
+      <p>Cortisol climbs quickly in the first 30 to 45 minutes after waking, then falls across the day to its low point around bedtime.</p>
+      <p>Once the job is done, cortisol’s own negative feedback switches off CRH and ACTH upstream.</p>
+    </div></article>
+
+    <article class="step"><div class="step-inner">
+      <span class="step-n"></span>
+      <h2>Short-term stress</h2>
+      <p>During a demanding stretch, both stress systems work harder and cortisol can run higher through the day and into the evening.</p>
+      <p>This is a normal, adaptive response. The rhythm usually settles once the pressure eases.</p>
+    </div></article>
+
+    <article class="step"><div class="step-inner">
+      <span class="step-n"></span>
+      <h2>Longer-term stress</h2>
+      <p>When stress goes on for months, some people’s curves flatten: a smaller morning rise and a higher evening level.</p>
+      <p>Animal studies suggest that under repeated stress a second brain signal, arginine vasopressin (AVP), takes a bigger part in driving ACTH. How far this applies in people is still unclear.</p>
+    </div></article>
+
+    <article class="step"><div class="step-inner">
+      <span class="step-n"></span>
+      <h2>Flattened rhythm</h2>
+      <p>Some studies find lower, flatter curves in people with long-standing stress, PTSD or chronic fatigue syndrome, though results are mixed.</p>
+      <p>A flat curve is a pattern, not a diagnosis. It doesn’t mean the adrenal glands have “run out”.</p>
+      <p class="callout"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6.2"/><path d="M8 7.2v4M8 4.9v.1"/></svg><span>Adrenal fatigue isn’t a recognized medical diagnosis (Endocrine Society).</span></p>
+    </div></article>
+
+    <article class="step"><div class="step-inner">
+      <span class="step-n"></span>
+      <h2>Patterns seen in research</h2>
+      <p>Side by side, the four curves show patterns reported in research, not stages everyone passes through. A 2017 meta-analysis linked flatter daytime cortisol slopes with poorer mental and physical health.</p>
+      <p>These are group averages. Any one person’s curve also shifts from day to day with sleep, timing and routine.</p>
+      <p class="src"><b>Sources</b>Adam et al., <i>Psychoneuroendocrinology</i> 2017 (diurnal slope meta-analysis); Fries et al., <i>Psychoneuroendocrinology</i> 2005 (hypocortisolism); Endocrine Society, on adrenal fatigue.</p>
+    </div></article>
+  </div>
+</section>
+
+<div id="end"></div>
+<div id="foot"></div>
+<script src="assets/js/glossary.js"></script>
+<script src="assets/js/site.js"></script>
+<script>
+(function () {
+  var S = [
+    { name: 'Typical rhythm', short: 'Typical', c: '#B7D3AE', d: 'M 50 190 C 57 128, 64 76, 74 70 C 170 76, 330 252, 610 318', end: 318 },
+    { name: 'Short-term stress', short: 'Short-term', c: '#F2B46E', d: 'M 50 150 C 57 104, 64 64, 74 60 C 200 66, 400 150, 610 214', end: 214 },
+    { name: 'Longer-term stress', short: 'Longer-term', c: '#EE8B75', d: 'M 50 214 C 57 178, 64 144, 74 138 C 230 150, 430 204, 610 252', end: 252 },
+    { name: 'Flattened rhythm', short: 'Flattened', c: '#C9CDC2', d: 'M 50 274 C 57 264, 64 256, 74 254 C 230 258, 430 270, 610 284', end: 284 }
+  ];
+  var $ = function (id) { return document.getElementById(id); };
+  var stage = $('stage'), line = $('curLine'), fill = $('curFill'), dot = $('endDot');
+  var tlb = [].slice.call(document.querySelectorAll('#tl button'));
+  var cur = 0, endY = S[0].end, first = true;
+
+  function set(i, ghost) {
+    var from = endY, to = S[i].end;
+    stage.style.setProperty('--sc', S[i].c);
+    stage.style.setProperty('--rc', S[i].c);
+    if (!first) {
+      line.classList.remove('draw'); line.style.strokeDasharray = 'none';
+      HX.morph(line, S[i].d, 950);
+      HX.morph(fill, S[i].d + ' L 610 340 L 50 340 Z', 950);
+      HX.tween(950, function (e) { endY = from + (to - from) * e; dot.setAttribute('cy', endY); });
+    }
+    first = false;
+    cur = i;
+    ['ghost', 'ghostLabel'].forEach(function (id) { $(id).setAttribute('opacity', ghost ? '1' : '0'); });
+    $('tlFill').style.width = (i / 3 * 100) + '%';
+    tlb.forEach(function (b, k) { b.classList.toggle('on', k === i); b.classList.toggle('past', k < i); });
+    $('rText').innerHTML = '<b>' + S[i].name + '</b> · Pattern ' + (i + 1) + ' of 4';
+  }
+  function overlay(on) {
+    $('overlay').setAttribute('opacity', on ? '1' : '0');
+    $('cur').setAttribute('opacity', on ? '0' : '1');
+    if (on) {
+      $('rText').innerHTML = '<span class="legend-row">' + S.map(function (s) { return '<span><i style="background:' + s.c + '"></i>' + s.short + '</span>'; }).join('') + '</span>';
+      tlb.forEach(function (b) { b.classList.add('past'); b.classList.remove('on'); });
+      $('tlFill').style.width = '100%';
+      stage.style.setProperty('--rc', 'transparent');
+    }
+  }
+  var story = HX.story({ onStep: function (i) {
+    if (i === 5) { overlay(true); return; }
+    overlay(false);
+    set(i === 0 ? 0 : i - 1, i > 1);
+  } });
+  tlb.forEach(function (b, k) { b.addEventListener('click', function () { story.go(k + 1); }); });
+})();
+</script>
+</body>
+</html>
