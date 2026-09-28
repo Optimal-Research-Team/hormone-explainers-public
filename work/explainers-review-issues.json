@@ -1,0 +1,230 @@
+[
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/06-cycle-stop-points.html line 199 (Stop 6, Melatonin: 'Limited evidence' chips)",
+  "severity": "high",
+  "problem": "The chip \"Tryptophan\" sits under 'Limited evidence' with glycine and magnesium, so it reads as an over-the-counter supplement. In Canada, L-tryptophan above 220 mg/day is a prescription drug (Health Canada advisory, 30 May 2017; Pr Tryptan product monograph), and doses used for sleep are 1 to 5 g. The product monographs also warn of serotonin syndrome when it is combined with SSRIs, SNRIs, tricyclics or MAOIs. The same loop names an SSRI (escitalopram) two stops earlier, and the only safety text on the page is the generic \"Supplements can interact with medicines, too.\" AASM 2017 also advises against L-tryptophan for insomnia.",
+  "fix": "Relabel the chip \"Tryptophan \u00b7 prescription\" and add a note: \"In Canada, L-tryptophan at the doses studied for sleep is a prescription medicine. Don't combine it with antidepressants such as SSRIs unless a clinician advises it: together they can cause serotonin syndrome.\" Alternatively, remove the chip and keep \"B6, folate and magnesium\"."
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/02-hpa-dysfunction.html line 163 (Longer-term stress step) and the 'Longer-term' curve",
+  "severity": "medium",
+  "problem": "\"When stress goes on for months, some people's curves flatten: a smaller morning rise and a higher evening level.\" The 'smaller morning rise' part goes against the main meta-analysis of the awakening response (Chida & Steptoe, Biol Psychol 2009, 147 studies). It found the rise was LARGER with job stress and general life stress, and smaller only with fatigue, burnout or exhaustion. The pattern that is supported for chronic stress is a lower morning LEVEL, a higher afternoon and evening level, a flatter slope and often a higher daily total (Miller, Chen & Zhou, Psychol Bull 2007: a 'high, flat' profile, with output falling as time since the stressor's onset grows).",
+  "fix": "Replace with: \"When stress goes on for months, some people's curves flatten: morning cortisol runs lower and evening cortisol higher, so the day's total can end up higher than usual.\" Cite Miller 2007 alongside Adam 2017 in the step 6 sources."
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/03-measuring-cortisol.html line 154 (step 5 'When the curve flattens') and line 181 (toggle readout)",
+  "severity": "medium",
+  "problem": "\"A smaller rise, little drop across the day and a lower total. In research, flatter curves are linked with chronic stress and poorer health on average.\" The readout also says \"Flatter pattern: a smaller rise, little drop and a lower total.\" Tying a LOWER total to chronic stress contradicts Miller 2007, where chronic stress gives a high, flat profile with a higher daily output. It also contradicts this site's own chapter 02 (higher evening level) and the chapter 03 AUC chip (\"Higher or lower total\"). Adam 2017 notes that a flatter slope can come from a lower morning value or a higher evening value.",
+  "fix": "Step 5: \"A smaller rise and little drop across the day. Depending on the cause, the day's total can end up higher or lower. In research, flatter slopes are linked with chronic stress and poorer health on average.\" Readout: \"Flatter pattern: a smaller rise, little drop, and a total that can be higher or lower.\""
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/06-cycle-stop-points.html lines 145 and 166 (ashwagandha notes at Stops 1 and 3)",
+  "severity": "medium",
+  "problem": "The only warning is \"Ashwagandha has been linked to rare cases of liver injury.\" That statement is accurate: Health Canada's Summary Safety Review (Health Product InfoWatch, August 2026) found a possible link to liver injury that 'cannot be ruled out', with at least 16 serious cases. For a public audience, though, the page leaves out the standard cautions. The Health Canada NHP monograph says to ask a practitioner before use in pregnancy or breastfeeding and warns about drowsiness. NCCIH advises avoiding it in pregnancy and breastfeeding and in thyroid or autoimmune disease, and lists interactions with thyroid hormone, sedatives, immunosuppressants, and diabetes and blood-pressure medicines. The page also doesn't say what liver injury looks like.",
+  "fix": "\"Ashwagandha has been linked to rare cases of liver injury: stop it and seek care if you notice yellowing skin or eyes, dark urine or itching. Avoid it if you are pregnant or breastfeeding, and check with a clinician first if you have a thyroid or autoimmune condition or take thyroid, sedative, diabetes, blood-pressure or immune-suppressing medicines.\""
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/06-cycle-stop-points.html (Stop 5 note) and assets/js/glossary.js line 61 ('hormone therapy'), plus the 'progestogen' entry",
+  "severity": "medium",
+  "problem": "\"Anyone with a uterus who takes estrogen also needs a progestogen to protect its lining.\" The glossary adds \"Prescription estrogen, with a progestogen if you have a uterus\". Both are overstated. The NAMS 2022 position statement says a progestogen is not required with low-dose vaginal estrogen, and conjugated estrogens/bazedoxifene (available in Canada) protects the endometrium without one. Menopause readers using vaginal estrogen for genitourinary symptoms could conclude they also need progesterone. The chip \"Progesterone (if you have a uterus)\" is also narrower than the options: any progestogen, or the TSEC.",
+  "fix": "Stop 5 note: \"Anyone with a uterus who takes systemic estrogen (pills, patches or gels) also needs protection for its lining, usually a progestogen such as micronized progesterone. Low-dose vaginal estrogen doesn't need one.\" Chip: \"Progestogen, such as progesterone (if you have a uterus)\". Glossary 'hormone therapy': \"Prescription estrogen, used to treat menopause symptoms such as hot flashes and night sweats. If you have a uterus, systemic estrogen is paired with a progestogen or another way of protecting its lining.\""
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/01-dose-response.html line 173 (Cushing's note) and the adrenal insufficiency note in step 2",
+  "severity": "medium",
+  "problem": "\"This is Cushing's syndrome, most often caused by long-term steroid medicines.\" This is correct, but a public reader on prednisone or a similar medicine may take it as a reason to stop. Stopping long-term glucocorticoids abruptly can cause adrenal insufficiency or adrenal crisis. The adrenal insufficiency note also doesn't say the condition can be life-threatening (Bornstein 2016).",
+  "fix": "Cushing's note: \"This is Cushing's syndrome, most often caused by long-term steroid medicines such as prednisone. Never stop a steroid medicine suddenly: talk to your prescriber, because stopping abruptly can cause cortisol deficiency. Cushing's is diagnosed with specific blood, urine or late-night saliva tests.\" Adrenal insufficiency note: add \"Untreated, it can become life-threatening (adrenal crisis).\""
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/07-sleep-hormone-web.html line 175 (connection 2, Sleep \u2194 Cortisol)",
+  "severity": "medium",
+  "problem": "\"High evening cortisol in turn makes sleep lighter and more broken.\" This is not supported as a direct effect of cortisol. Controlled infusions in healthy people show that cortisol INCREASES slow-wave (deep) sleep and reduces REM (Born et al., JCEM 1989; Born et al., Am J Physiol 1991; Bohlhalter et al., Neurobiol Aging 1997). The arousal in insomnia is tied to wider stress-system activation (CRH, sympathetic drive) rather than to cortisol itself (Vgontzas 2001). High-dose steroid medicines can cause insomnia, but that is a separate point.",
+  "fix": "\"In turn, an overactive stress system in the evening, as seen in chronic insomnia, goes with lighter, more broken sleep. The brain's stress signals seem to drive this more than cortisol itself.\""
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/08-pyramid-of-interventions.html line 134 (Layer 1, bedroom temperature)",
+  "severity": "medium",
+  "problem": "\"A dark, cool (around 16\u201319 \u00b0C) and quiet bedroom\". The 16\u201319 \u00b0C range has no evidence base, and the cited source (Okamoto-Mizuno 2012) gives no target. It finds that in real-life conditions heat hurts sleep, and it warns that cold affects cardiac autonomic responses. In older adults, the best sleep efficiency was at 20\u201325 \u00b0C (Baniassadi et al., Sci Total Environ 2023). WHO Housing and Health Guidelines (2018) recommend indoor temperatures of at least 18 \u00b0C in cold seasons, higher for vulnerable people. A 16 \u00b0C target falls below that minimum. The WHO 30 dB noise figure is fine.",
+  "fix": "\"A dark, quiet bedroom that feels comfortably cool, with bedding you can adjust (overheating disrupts sleep more than mild cool does). WHO guidance suggests keeping background noise to about 30 dB, roughly a whisper.\" If a number is wanted: \"around 18\u201320 \u00b0C for many people; older adults may sleep best a little warmer.\""
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/08-pyramid-of-interventions.html line 143 (Layer 2 basics)",
+  "severity": "medium",
+  "problem": "\"enough magnesium, B12, vitamin D, iron and folate, ideally from food, with testing if a deficiency is suspected.\" For this audience this is inaccurate on two points. Canada's Dietary Guidelines advise ALL adults 51 and over to take a daily 400 IU (10 \u00b5g) vitamin D supplement, whatever their test results. Anyone who could become pregnant (which includes perimenopause) should take a daily multivitamin with 0.4 mg folic acid. Choosing Wisely Canada also advises against routine vitamin D testing in low-risk adults, so 'testing if a deficiency is suspected' shouldn't be the route for vitamin D.",
+  "fix": "\"Basics: hydration, fibre, and enough magnesium, B12, iron and folate, ideally from food, with testing if a deficiency is suspected. Vitamin D is the exception: Health Canada advises everyone over 50 to take a daily 400 IU supplement, and anyone who could become pregnant should take a multivitamin with 0.4 mg folic acid.\""
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/06-cycle-stop-points.html line 155 (Stop 2 Rx chips), 08-pyramid-of-interventions.html line 151, assets/js/glossary.js line 27 ('metformin')",
+  "severity": "medium",
+  "problem": "Metformin and GLP-1 medicines appear as prescription treatments for 'insulin resistance', and the glossary says metformin is \"A common prescription medicine for type 2 diabetes and insulin resistance.\" Neither is approved in Canada for insulin resistance as such. Metformin is approved for type 2 diabetes and used off-label in prediabetes and PCOS (Diabetes Canada; Teede 2023). GLP-1 receptor agonists are approved for type 2 diabetes and, for some agents, chronic weight management in people who meet BMI criteria (Wharton 2020). CHANGES-MEDICAL.md calls them 'correctly indicated', which overstates their approved use.",
+  "fix": "Stop 2: add a note \"Metformin is approved for type 2 diabetes and sometimes used for prediabetes or PCOS. GLP-1 medicines are approved for type 2 diabetes and, for some, weight management.\" Glossary: \"A common prescription medicine for type 2 diabetes, also used for prediabetes and PCOS. It lowers the sugar the liver releases and helps the body respond better to insulin.\" Pyramid: \"...then prescription medicines such as metformin or GLP-1 medicines if you have prediabetes, type 2 diabetes or obesity (discuss with a clinician).\""
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/assets/js/glossary.js line 22 ('deep sleep')",
+  "severity": "low",
+  "problem": "\"It declines from mid-life.\" This is wrong on timing. Slow-wave sleep falls most steeply between early adulthood and midlife (Van Cauter et al., JAMA 2000: 18.9% at age 16\u201325 vs 3.4% at 36\u201350 in men, with no further significant fall into late life; Ohayon 2004). Women keep more of it than men.",
+  "fix": "\"Slow-wave sleep: the deepest stage of non-REM sleep, important for feeling restored. It declines with age, starting in early adulthood.\""
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/04-cortisol-partners.html line 231 ('Under study' chips) and CHANGES-MEDICAL.md [Zuardi 1993]",
+  "severity": "low",
+  "problem": "\"CBD \u00b7 early evidence\" appears under a heading about partners 'being studied as ways to calm the stress response'. The study the change log cites (Zuardi 1993) found the opposite direction: 300\u2013600 mg CBD blunted the normal morning fall in cortisol, so cortisol stayed higher than with placebo. The human CBD evidence concerns subjective anxiety in lab stress tests, not lowering cortisol. CBD can also raise liver enzymes and interacts with many medicines (CYP enzymes).",
+  "fix": "Chip: \"CBD \u00b7 anxiety studies, no cortisol drop shown\". Change-log source: replace Zuardi 1993 with an anxiety trial (for example Bergamaschi et al., Neuropsychopharmacology 2011), or state that Zuardi found cortisol was higher."
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/06-cycle-stop-points.html line 133 and the ring's arrowheads",
+  "severity": "low",
+  "problem": "\"The moving dot is that effect travelling around the ring.\" The arrows are one-way, so the ring asserts Mood/cognition \u2192 Estrogen and Estrogen \u2192 Melatonin as causal steps. Neither is established: mood does not lower estrogen, and human evidence that estrogen drives melatonin is weak. Stop 6's foundations also list \"Cool, dark bedroom\" and \"Exercise\" as melatonin levers. Darkness is the lever; room temperature doesn't change melatonin, and exercise effects on melatonin are small and depend on timing.",
+  "fix": "\"The moving dot shows how a problem in one area can pass to the next. The order around the ring is a simplification: not every step is a direct cause of the next.\" In Stop 6, change \"Cool, dark bedroom\" to \"Dark bedroom\" and drop \"Exercise\", or move it to Limited evidence."
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/06-cycle-stop-points.html line 176 (Stop 4 Rx chip)",
+  "severity": "low",
+  "problem": "\"SSRI, such as escitalopram\" sits under the stop \"Mood, fatigue, cognition\". SSRIs are indicated for depression and anxiety disorders, not for fatigue or cognition (CANMAT 2023), and they can themselves cause fatigue.",
+  "fix": "Chip: \"SSRI, such as escitalopram, for depression or anxiety\"."
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/08-pyramid-of-interventions.html lines 143, 158, 171 (pyramid claims)",
+  "severity": "low",
+  "problem": "(a) \"The most impactful changes sit at the bottom of the pyramid and the most marketed at the top.\" This is stated as fact, and so is the 'MOST IMPACTFUL' label on the base. No evidence ranks sleep above physical activity or diet; the ordering is a clinical framework. (b) \"fine-tuning exercise and shifting effort to a diet or meal plan brings further benefit\" is an absolute. (c) \"The exercise you enjoy and will keep doing beats any specific type\" goes against the Canadian 24-Hour Movement Guidelines (2020), which call for about 150 min/week of moderate-to-vigorous activity plus muscle-strengthening at least twice a week. Resistance training specifically matters for bone and muscle after menopause.",
+  "fix": "(a) \"In this framework, the foundations sit at the bottom and the most marketed options at the top.\" (b) \"...can bring further benefit.\" (c) \"The best exercise is the kind you'll keep doing. Over a week, aim for about 150 minutes of moderate activity plus muscle-strengthening at least twice.\""
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/04-cortisol-partners.html lines 250\u2013251 (see-saw readouts)",
+  "severity": "low",
+  "problem": "\"Evening: cortisol low, melatonin high.\" In the evening melatonin is only starting to rise (dim-light melatonin onset is about 2 h before habitual sleep); it is high overnight and peaks in the small hours, as the landing page says. \"Stressed evening: cortisol stays up and melatonin's rise can be blunted\" implies that cortisol suppresses melatonin. CHANGES-MEDICAL.md itself says this is not established in humans; evening light is the documented suppressor (Gooley 2011).",
+  "fix": "\"Evening: cortisol near its low, melatonin starting to rise.\" and \"Stressed evening: cortisol stays up, and sleep tends to suffer.\""
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/02-hpa-dysfunction.html line 149 (Typical rhythm)",
+  "severity": "low",
+  "problem": "\"...then falls across the day to its low point around bedtime.\" The nadir falls around midnight, in the first hours of sleep, as the landing page says (\"Cortisol bottoms out around midnight\"). The two pages are inconsistent.",
+  "fix": "\"...then falls across the day, reaching its low point around midnight, early in the night's sleep.\""
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/03-measuring-cortisol.html line 161 (Research measures step)",
+  "severity": "low",
+  "problem": "\"A first sample taken 15 minutes late can miss the morning rise.\" The error is understated in one way and overstated in another. Stalder 2016 consensus guidelines require the first sample within about 5 minutes of waking. Delays of 5\u201315 minutes already distort the measured rise, first overestimating and then underestimating it, rather than 'missing' it.",
+  "fix": "\"Even a 5 to 15 minute delay in taking the first sample can make the morning rise look bigger or smaller than it really is.\""
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/01-dose-response.html line 170 and glossary 'central hypothyroidism'",
+  "severity": "low",
+  "problem": "\"\u2193 GnRH, \u2193 growth hormone, central hypothyroidism\". Cortisol excess reliably suppresses TSH and T4-to-T3 conversion, but overt central hypothyroidism is uncommon. For a public reader, the glossary term makes it sound like a standard feature.",
+  "fix": "\"\u2193 GnRH, \u2193 growth hormone, \u2193 TSH (which can lower thyroid hormone)\""
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/index.html line 214 (static hero caption)",
+  "severity": "low",
+  "problem": "The HTML fallback caption still reads \"Morning: cortisol rises sharply after waking while melatonin stays switched off.\" JavaScript replaces it with 'melatonin fades away', but crawlers, no-JS readers and link previews see the uncorrected text that CHANGES-MEDICAL.md says was fixed.",
+  "fix": "Change the static text to match the script: \"Morning: cortisol rises sharply after waking while melatonin fades away.\""
+ },
+ {
+  "area": "/Users/peterphua/Claude Code/hormone-explainers-public/08-pyramid-of-interventions.html line 151 (Layer 3 fasting)",
+  "severity": "low",
+  "problem": "\"long fasts can raise cortisol, so they don't suit everyone.\" This is accurate (Bergendahl 1996), but it leaves out the real safety group. Fasting while taking insulin or sulfonylureas risks hypoglycemia, and people with a history of eating disorders or who are pregnant shouldn't fast. This matters because the same step goes on to name metformin and GLP-1 medicines.",
+  "fix": "\"...long fasts can raise cortisol, so they don't suit everyone. If you take diabetes medicines, are pregnant or have had an eating disorder, don't fast without medical advice.\""
+ },
+ {
+  "area": "Top bar: Chapters button accessible name (phones, 640px and below)",
+  "severity": "high",
+  "problem": "At 640px and narrower, CSS rule `.nav-btn span { display: none; }` (site.css:548) hides the only text in the Chapters button. The accessibility tree then shows `button:\"\"` on every page, and axe reports a critical button-name violation at 390 and 320. On phones this button is the only way to reach the chapter list and The Optimal Menopause Protocol link.",
+  "fix": "In assets/js/site.js line 112, add an explicit label: `var menuBtn = '<button class=\"nav-btn nav-menu\" type=\"button\" data-menu aria-label=\"Chapters\" aria-expanded=\"false\" aria-controls=\"cmenu\">' + I.grid + '<span>Chapters</span></button>';`"
+ },
+ {
+  "area": "Keyboard: arrow keys jump to another chapter",
+  "severity": "medium",
+  "problem": "The global keydown handler (site.js:257-266) runs in public scroll mode and only skips inputs, sliders and [data-keys]. I confirmed three cases. ArrowRight while a glossary term has focus opens the next chapter (02 goes to 03). ArrowLeft while the stage's 'Next step' button has focus opens the previous chapter (03 goes to 02). ArrowRight anywhere on the landing page body opens chapter 01. This shortcut was built for the exam-room clicker, and the public site never tells readers it exists.",
+  "fix": "Only enable it with Present mode. Add as the first line inside the handler in site.js:258: `if (!PRESENT) return;`. If you want to keep it on the public site, use `var t = e.target; if (t && t !== body && t !== document.documentElement) return;` instead of the current closest() check, so it only fires when nothing is focused."
+ },
+ {
+  "area": "Keyboard focus ring on dark surfaces",
+  "severity": "medium",
+  "problem": "`:focus-visible { outline: 2px solid var(--forest) }` (site.css:86) applies everywhere. On the dark landing hero (top-bar links, Start with chapter 01, Browse the series), the dark stage (step prev/next .sbtn, .gseg toggles) and the closing band CTA, the #2C4E25 ring against a background around #0F190F measures about 1.9:1, below the 3:1 minimum for non-text contrast. It was barely visible in screenshots.",
+  "fix": "Add after site.css:86: `.nav-wrap.on-dark :focus-visible, .dh :focus-visible, .stage :focus-visible, .band :focus-visible { outline-color: var(--cream); }`"
+ },
+ {
+  "area": "Chapter menu: focus management and focus styling",
+  "severity": "medium",
+  "problem": "(1) The menu is appended as the last child of <body>, after the footer. Tab past its last link, or Shift+Tab from its first, sends focus back into the page or top bar while the menu stays open over the content. Only Esc or a click closes it. (2) `.cm:focus-visible` and `.cmenu-ext a:focus-visible` set `outline: none` and rely on a background change: linen #F5F0E6 on near-white, and linen-2 on linen. That is about 1.1:1, so the focused row is almost invisible. (3) The menu has role=dialog but is neither modal nor focus-trapped.",
+  "fix": "In site.js, replace `body.appendChild(menu);` (line 170) with `if (navMount) navMount.insertAdjacentElement('afterend', menu); else body.appendChild(menu);`. After line 181, add `menu.addEventListener('focusout', function (e) { var to = e.relatedTarget; if (!menu.hidden && to && !menu.contains(to) && menuBtns.indexOf(to) < 0) setMenu(false); });`. Replace lines 150-152 with `var menu = document.createElement('nav'); menu.className = 'cmenu'; menu.id = 'cmenu'; menu.hidden = true; menu.setAttribute('aria-label', 'Chapters');` and drop role=dialog. In site.css, change lines 446 and 463 to keep an outline: `.cm:focus-visible, .cmenu-ext a:focus-visible { outline: 2px solid var(--forest); outline-offset: -2px; }` and add `.cmenu-ext a:last-child:focus-visible { outline-color: var(--cream); outline-offset: -4px; }`."
+ },
+ {
+  "area": "Landing hero: live-region chatter and no pause control",
+  "severity": "medium",
+  "problem": "`.dh-read` has aria-live=\"polite\" (index.html:207), but its #rTime text is rewritten about every 140 ms during autoplay (24 hours per 20 s, in 10-minute steps). With frames forced, I counted 50 DOM mutations in 3 s, so screen readers would keep announcing times. The rhythm also animates without end and has no pause control (WCAG 2.2.2). Scrubbing only pauses it for 2.5 to 5 s. Reduced-motion users are already covered by HX.reduce.",
+  "fix": "Remove `aria-live=\"polite\"` from `<div class=\"dh-read ...\">` on line 207. The slider's aria-valuetext is already announced on key presses. Add a toggle inside .dh-read, for example `<button class=\"dh-pause btn-text\" type=\"button\" aria-pressed=\"false\">Pause</button>`. In the page script, add `var paused = false, pb = document.querySelector('.dh-pause'); pb.addEventListener('click', function () { paused = !paused; pb.setAttribute('aria-pressed', paused); pb.textContent = paused ? 'Play' : 'Pause'; auto = !paused; resumeAt = 0; });` and change the loop guard to `if (!auto && !paused && now > resumeAt && resumeAt) auto = true;`."
+ },
+ {
+  "area": "Deployment exposes internal-only files on the public site",
+  "severity": "medium",
+  "problem": ".github/workflows/deploy.yml uploads the whole repo (`path: .`), so these become public URLs on the live site. README.md carries the internal patient site URL (optimal-research-team.github.io/hormone-explainers/) and a local path (/Users/peterphua/Claude Code/hormone-explainers). CHANGES-MEDICAL.md says 'It has not yet been signed off by a clinician'. IMAGE_PROMPTS.md and tools/ also go out. The README link is acceptable inside the repo, but it shouldn't also be served on the public site.",
+  "fix": "Stage only the site files. In deploy.yml, add before upload-pages-artifact: `- name: Stage site\\n  run: |\\n    mkdir _site\\n    cp -r *.html robots.txt sitemap.xml .nojekyll assets _site/`, then set `path: _site`."
+ },
+ {
+  "area": "Text contrast token --ink-3",
+  "severity": "medium",
+  "problem": "--ink-3 #75786E on cream #FFFCF7 is 4.39:1 (4.46:1 on --card), just under AA 4.5:1 for small text. axe flags 50 to 110 nodes per chapter: kicker, TOC header, step count, .step .note (14.5px), .src (12.5px), footer labels and base line, bento numbers, menu tags and nav-here number.",
+  "fix": "In site.css line 15, change `--ink-3: #75786E;` to `--ink-3: #6B6E64;`. That gives about 5.1:1 on cream and 4.6:1 on linen with the same hue. (Inactive steps at .24/.3 opacity also trip axe, but that's the intended scrollytelling dimming. Leave it.)"
+ },
+ {
+  "area": "Diagram label legibility (phones, plus two desktop cases)",
+  "severity": "medium",
+  "problem": "Measured rendered SVG label sizes. At 390px: ch04 CRH/ACTH/Cortisol pills are 6.4px, ch05 GROUND LEVEL is 5.4px and the canopy hormone labels are 8.5px, ch03's step badge is 6.6px, and ch06, ch07 and ch08 number badges are 7.7 to 8.5px. At 1440px: ch01's LOW CORTISOL / OPTIMAL RANGE / HIGH CORTISOL are 7.8px (the CSS `.stage .t-lab { font-size: 12px }` overrides the SVG's font-size=15), and ch03's axis labels are 8.6px. The ch04 and ch05 SVGs are portrait (540x640, 560x650) in a short landscape stage on phones, so they scale to about 0.52.",
+  "fix": "Desktop: in 01-dose-response.html's <style>, add `#doseSvg .t-lab { font-size: 18px; }`. In 03-measuring-cortisol.html's <style>, add `.stage .t-lab { font-size: 14.5px; }`. Phones: in 04 and 05, add `@media (max-width: 640px) { .stage-col { height: 64vh; max-height: 600px; } }` (the ch07 treatment). Raise the ch04 pill text and the ch05 canopy labels and GROUND LEVEL by about 30%, widening the pill rects to match. Raise the number-badge font in 03, 06, 07 and 08 so every label renders at 10px or larger at 390."
+ },
+ {
+  "area": "Landmarks and SVG roles",
+  "severity": "low",
+  "problem": "Chapter pages 01-08 have no <main> (axe: landmark-one-main). The top bar is built inside a plain <div> (axe: region on .nav-brand, .nav-proto and others). In ch03 (line 77), ch06 #ring (line 74) and ch07 (line 93), the SVGs are role=\"img\" but contain focusable [data-t] triggers. That makes the triggers presentational to assistive tech (axe: nested-interactive).",
+  "fix": "In each chapter file, wrap `<section class=\"story\" ...>...</section>` and `<div id=\"end\"></div>` in `<main id=\"main\">...</main>`. In site.js lines 119/130, change `'<div class=\"nav\">'`...`'</div>'` to `'<nav class=\"nav\" aria-label=\"Hormone explainers\">'`...`'</nav>'`. In 03:77, 06:74 and 07:93, change `role=\"img\"` to `role=\"group\"` and keep the aria-label."
+ },
+ {
+  "area": "Top bar and footer design consistency",
+  "severity": "low",
+  "problem": "The bar matches the site: cream glass, a Castoro series and chapter title that swaps in on scroll, a forest pill, a light-on-dark state over the hero, a progress hairline, and no overlap from 320 to 1440 (the chapter title ellipsizes at 761-800). Some details are inconsistent. The Book an intro pill uses a \u2192 arrow, but it opens a new tab: the menu uses \u2197, the footer and About links have no cue, and screen readers get no new-tab hint. The Protocol link opens in the same tab while Book opens a new one. The Chapters button is a 10px-radius box next to a 999px pill, while every other site button is a pill. Both beoptimal.ca URLs 301 to www.beoptimal.ca.",
+  "fix": "In site.js: define `var newTab = '<span class=\"sr-only\"> (opens in a new tab)</span>';`. Use `I.ext` instead of `I.arrow` in the nav-book markup (line 117) and append `newTab` there, in the menu link (168), in the footer link (217) and in index.html:466. Add `.sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}` and change the hover to `.nav-book:hover svg { transform: translate(2px,-2px); }`. Add `.nav-menu { border-radius: 999px; }` (and `width: 36px` at 640px and below for a circle). Set protocolUrl and clinic.site to https://www.beoptimal.ca/... in CONFIG, index.html:466 and tools/seo-head.py. Optional: add `&utm_source=hormone-explainers&utm_medium=referral` to bookUrl for attribution, if the booking app tolerates extra params."
+ },
+ {
+  "area": "Landing copy: disclaimer said three times",
+  "severity": "low",
+  "problem": "The landing shows the hero note 'General education, not medical advice.' Then About item 01 ('Nothing here can account for your health history, medicines or test results. Talk with a qualified clinician before you start, stop or change any treatment.') and the footer notice ('It can't account for your health history, medicines or test results. Talk with a qualified clinician...') appear within one scroll of each other and are almost word for word the same. The About section's left column also leaves a tall empty block at 1440.",
+  "fix": "Either rewrite About item 01 (index.html:464) to make a different point, or skip the footer notice on the landing: in site.js:209, render `.foot-notice` only when `cur || !document.querySelector('.about')`. Add `.about-head { position: sticky; top: calc(var(--nav-h) + 32px); }` at 1081px and wider to fill the empty column. Optional copy addition to the footer notice: 'For a mental health crisis, call or text 9-8-8.'"
+ },
+ {
+  "area": "Chapter 07 on short phones (320x640)",
+  "severity": "low",
+  "problem": "Ch07 sets `.stage-col { height: 64vh; max-height: 600px; }` at 640px and below. At 320x640 the sticky stage runs from 66 to 476px, which leaves about 160px to read in. The active step's heading lands at 561px and its body text starts below the fold.",
+  "fix": "In the 07-sleep-hormone-web.html <style>, add `@media (max-width: 640px) and (max-height: 700px) { .stage-col { height: 54vh; min-height: 300px; } }`."
+ },
+ {
+  "area": "Performance: landing texture and WebGL buffer",
+  "severity": "low",
+  "problem": "assets/img/treeline.png is 644KB (4096x512 RGB), about two-thirds of the landing's 955-981KB of local assets. sky.js requests `preserveDrawingBuffer: true`, which costs a buffer copy every frame. It's only needed for social-card capture, and it produced the 'GPU stall due to ReadPixels' warnings in headless runs.",
+  "fix": "Run `cwebp -lossless -z 9 assets/img/treeline.png -o assets/img/treeline.webp` and point index.html:508 at `trees: 'assets/img/treeline.webp'`. (Lossless keeps the R/G/B masks exact; downsizing to 2048x256 is also fine.) In sky.js getContext, set `preserveDrawingBuffer: document.documentElement.classList.contains('og')`."
+ },
+ {
+  "area": "SEO polish",
+  "severity": "low",
+  "problem": "All 9 indexable pages have unique titles and descriptions (descriptions 138-155 chars), a canonical that matches og:url and the sitemap, valid JSON-LD, one h1 and 1200x630 OG images. 404 is noindex and returns status 404. Remaining nits: (1) Titles for index (65 chars), 01 (64) and 04 (65) will truncate in search results. (2) The home og:image:alt says 'an illustrated diagram', but the card is the hero screenshot. (3) No datePublished, and no site-verification slot: robots.txt on a github.io project path is never read, so the sitemap has to be submitted in Search Console as a URL-prefix property. (4) home.jpg shows the top bar's action buttons (Protocol, Chapters, Book).",
+  "fix": "In tools/seo-head.py PAGES, shorten the titles, e.g. 'Hormone Explainers: cortisol, sleep and hormones \u00b7 Optimal', 'Cortisol: why too little and too much both harm \u00b7 Optimal' and 'Cortisol\u2019s partners: oxytocin, GABA and melatonin \u00b7 Optimal'. Special-case the index alt as 'A 24-hour cortisol and melatonin rhythm over a boreal treeline'. Add `'datePublished': MODIFIED` to the web dict and an optional `<meta name=\"google-site-verification\" content=\"...\">` line for index. Re-run `python3 tools/seo-head.py`. For the card, add `html.og .nav-actions { display: none !important; }` to site.css and recapture assets/og/home.jpg with `index.html?og&still&h=6.67`."
+ },
+ {
+  "area": "Hidden exam-room / Present markup still ships",
+  "severity": "low",
+  "problem": "Present mode and the exam-room section are correctly hidden. `?present` and `?present=last` don't enter Present mode, no toast is added, F does nothing, no [data-present] element is visible and `.exam` is display:none. `?og` still renders through Present mode, as the README intends. However, the hidden copy ('For the exam room \u00b7 Walk through it together', 'Present in the exam room' on 8 chapter heads) and a link to `01-dose-response.html?present` remain in the public DOM, where crawlers and CSS-off readers can see them.",
+  "fix": "Optional. Wrap index.html lines 420-455 and each chapter's `<button class=\"btn-text\" type=\"button\" data-present>...Present in the exam room</button>` in `<template data-exam-room>...</template>`, so they stay in the file for flag parity but never render or get indexed."
+ },
+ {
+  "area": "TOC keyboard flow",
+  "severity": "low",
+  "problem": "The TOC works: clicking item 5 activates step 5 and sets aria-current=step, Enter on an item works, and Begin, the stage stepper and ?step=N all land on the right step. But after keyboard activation, focus stays on the TOC link, which is now off-screen, so the next Tab jumps back up to the chapter head.",
+  "fix": "In site.js request(i), when it's called from a TOC link, move focus after the scroll: `steps[i].setAttribute('tabindex', '-1'); steps[i].focus({ preventScroll: true });`. For example, pass a flag from the `[data-go]` click handler at line 493."
+ },
+ {
+  "area": "Passed checks (for the record, no action)",
+  "severity": "low",
+  "problem": "Verified with puppeteer at 1440, 768, 390 and 320 against a GitHub-Pages-like local server. No console errors or failed or 404 asset requests on the index, the 8 chapters or 404.html, and the base href works on nested missing paths. No horizontal overflow on any page. The WebGL sky renders under SwiftShader (canvas mean luma about 34 at night) with no errors, and the CSS sky fallback works with --disable-3d-apis. The scroll story activated the correct step for every step of all 8 chapters at all 4 widths, with the TOC count matching the step count and progress saved to localStorage. The chapter menu opens, focuses the current chapter, closes on Esc and returns focus. Glossary popovers work on hover, tap and keyboard focus (aria-describedby set, Esc closes) and stay inside the viewport. The booking link is https://book.beoptimal.ca/?service=hormone with target=_blank rel=noopener in the nav, menu, footer and About, and returns HTTP 200. The notice appears in every footer and the hero. No link to the internal site outside README.md (CHANGES-MEDICAL.md names only the relative path ../hormone-explainers).",
+  "fix": "No change needed."
+ }
+]

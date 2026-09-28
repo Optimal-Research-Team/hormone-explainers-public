@@ -14,13 +14,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = 'https://optimal-research-team.github.io/hormone-explainers-public/'
+PUBLISHED = '2026-09-28'
 MODIFIED = '2026-09-28'
 
 CLINIC = {
     '@type': 'MedicalClinic',
-    '@id': 'https://beoptimal.ca/#clinic',
+    '@id': 'https://www.beoptimal.ca/#clinic',
     'name': 'Optimal Health Clinic',
-    'url': 'https://beoptimal.ca',
+    'url': 'https://www.beoptimal.ca',
     'logo': BASE + 'assets/img/optimal-wordmark-green.png',
     'telephone': '+1-437-370-0291',
     'email': 'care@beoptimal.ca',
@@ -40,12 +41,12 @@ AUDIENCE = {'@type': 'MedicalAudience', 'audienceType': 'Patient'}
 # file, <title>, H1 / og:title stem, meta description, og image, topics
 PAGES = [
     ('index.html',
-     'Hormone Explainers: cortisol, sleep and the hormone web · Optimal',
+     'Hormone Explainers: cortisol, sleep and hormones · Optimal',
      'Hormone Explainers',
      'Eight short, interactive explainers on cortisol, stress, sleep and the sex hormones, with the evidence labelled. Free education from Optimal Health Clinic.',
      'home.jpg', ['Cortisol', 'Stress', 'Sleep', 'Melatonin', 'Insulin resistance', 'Sex hormones']),
     ('01-dose-response.html',
-     'Cortisol levels: why too little and too much both harm · Optimal',
+     'Cortisol: why too little and too much both harm · Optimal',
      'Cortisol has a dose-dependent effect',
      'Drag a marker along cortisol’s dose–response curve to see what too little, too much and the healthy middle band do in the body. Chapter 1 of 8.',
      '01.jpg', ['Cortisol', 'Adrenal insufficiency', 'Cushing’s syndrome']),
@@ -60,7 +61,7 @@ PAGES = [
      'The cortisol awakening response, diurnal slope and area under the curve: three research measures from one daily curve, and their limits. Chapter 3 of 8.',
      '03.jpg', ['Cortisol awakening response', 'Diurnal cortisol slope', 'Salivary cortisol']),
     ('04-cortisol-partners.html',
-     'Cortisol’s partners: oxytocin, GABA, melatonin and more · Optimal',
+     'Cortisol’s partners: oxytocin, GABA and melatonin · Optimal',
      'Cortisol’s partners',
      'What turns cortisol production down, what buffers its effects, and how cortisol and melatonin trade places across the day. Chapter 4 of 8.',
      '04.jpg', ['Cortisol', 'Oxytocin', 'Melatonin', 'DHEA', 'HPA axis']),
@@ -96,13 +97,14 @@ def block(i, page):
     url = BASE if file == 'index.html' else BASE + file
     og = BASE + 'assets/og/' + img
     og_title = h1 + (' · Optimal' if file == 'index.html' else ' · Hormone Explainers')
-    alt = h1 + ': an illustrated diagram from Optimal’s hormone explainers'
+    alt = ('A 24-hour cortisol and melatonin rhythm over a boreal treeline' if file == 'index.html'
+           else h1 + ': an illustrated diagram from Optimal’s hormone explainers')
     web = {
         '@type': 'MedicalWebPage', '@id': url + '#page', 'url': url, 'name': h1, 'headline': h1,
         'description': desc, 'inLanguage': 'en-CA', 'audience': AUDIENCE,
         'specialty': 'https://schema.org/Endocrine',
         'about': [{'@type': 'MedicalEntity', 'name': t} for t in topics],
-        'image': og, 'dateModified': MODIFIED,
+        'image': og, 'datePublished': PUBLISHED, 'dateModified': MODIFIED,
         'isPartOf': {'@id': SITE['@id']}, 'publisher': {'@id': CLINIC['@id']},
     }
     if file == 'index.html':

@@ -12,12 +12,12 @@
     presentMode: false,   /* clinician Present mode: nav button, chapter-head button, ?present links, keys */
     examRoom: false,      /* the landing page's "For the exam room" section ([data-exam-room]) */
     bookUrl: 'https://book.beoptimal.ca/?service=hormone',
-    protocolUrl: 'https://beoptimal.ca/menopause',
+    protocolUrl: 'https://www.beoptimal.ca/menopause',
     protocolLabel: 'The Optimal Menopause Protocol',
     clinic: {
       name: 'Optimal Health Clinic',
       street: '630 Huronia Road, Unit 5', city: 'Barrie, ON L4N 0W5',
-      phone: '(437) 370-0291', tel: '+14373700291', email: 'care@beoptimal.ca', site: 'https://beoptimal.ca'
+      phone: '(437) 370-0291', tel: '+14373700291', email: 'care@beoptimal.ca', site: 'https://www.beoptimal.ca'
     }
   };
   var root = document.documentElement;
@@ -25,6 +25,12 @@
   var PRESENT = CONFIG.presentMode || root.classList.contains('og');
   if (PRESENT) root.classList.add('hx-present');
   if (CONFIG.examRoom) root.classList.add('hx-exam');
+  /* Flag-gated markup ships inside <template data-flag="present|exam">, so on the public site it
+     never renders or gets indexed. Turning a flag on stamps it back into the page. */
+  [].forEach.call(document.querySelectorAll('template[data-flag]'), function (t) {
+    var f = t.getAttribute('data-flag');
+    if ((f === 'present' && PRESENT) || (f === 'exam' && CONFIG.examRoom)) t.parentNode.replaceChild(t.content.cloneNode(true), t);
+  });
 
   var CHAPTERS = [
     { n: 1, file: '01-dose-response.html', title: 'Cortisol has a dose-dependent effect', tag: 'The basics',
@@ -107,16 +113,17 @@
   var hasStory = !!document.querySelector('.story');
   if (hasStory) body.classList.add('has-story');
   var blank = ' target="_blank" rel="noopener"';
+  var newTab = '<span class="sr-only"> (opens in a new tab)</span>';
   if (navMount) {
     var here = cur ? CHAPTERS[cur - 1] : null;
-    var menuBtn = '<button class="nav-btn nav-menu" type="button" data-menu aria-expanded="false" aria-controls="cmenu">' + I.grid + '<span>Chapters</span></button>';
+    var menuBtn = '<button class="nav-btn nav-menu" type="button" data-menu aria-label="Chapters" aria-expanded="false" aria-controls="cmenu">' + I.grid + '<span>Chapters</span></button>';
     var actions =
       (cur && hasStory && PRESENT ? '<button class="nav-btn" type="button" data-present>' + I.present + '<span>Present</span></button>' : '') +
       '<a class="nav-btn nav-proto" href="' + CONFIG.protocolUrl + '">' + CONFIG.protocolLabel + '</a>' +
       menuBtn +
-      '<a class="nav-book" href="' + CONFIG.bookUrl + '"' + blank + '><span>Book an intro</span>' + I.arrow + '</a>';
+      '<a class="nav-book" href="' + CONFIG.bookUrl + '"' + blank + '><span>Book an intro</span>' + I.ext + newTab + '</a>';
     navMount.innerHTML =
-      '<div class="nav">' +
+      '<nav class="nav" aria-label="Hormone explainers">' +
         '<a class="nav-brand" href="index.html" aria-label="Optimal hormone explainers, home">' +
           '<img class="wm wm-dark" src="assets/img/optimal-wordmark-green.png" alt="Optimal" width="86" height="20">' +
           '<img class="wm wm-light" src="assets/img/optimal-wordmark-white.png" alt="" width="86" height="20">' +
@@ -127,7 +134,7 @@
         '</div>' +
         '<div class="nav-actions">' + actions + '</div>' +
         '<span class="nav-prog" aria-hidden="true"></span>' +
-      '</div>';
+      '</nav>';
     var onScroll = function () { navMount.classList.toggle('scrolled', window.scrollY > 4); };
     window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
     var darks = document.querySelectorAll('[data-nav-dark]');
@@ -147,9 +154,9 @@
   }
 
   /* ---------- chapter menu ---------- */
-  var menu = document.createElement('div');
+  var menu = document.createElement('nav');
   menu.className = 'cmenu'; menu.id = 'cmenu'; menu.hidden = true;
-  menu.setAttribute('role', 'dialog'); menu.setAttribute('aria-label', 'Chapters');
+  menu.setAttribute('aria-label', 'Chapters');
   var viewed = CHAPTERS.filter(function (c) { return status(c.n); }).length;
   menu.innerHTML =
     '<div class="cmenu-head"><span class="label">Hormone explainers · 8 chapters</span><a href="index.html">Overview</a></div>' +
@@ -165,9 +172,10 @@
     (hasStory && PRESENT ? '<button type="button" class="cmenu-present" data-present>' + I.present + 'Present this chapter</button>' : '') + '</div>' +
     '<div class="cmenu-ext">' +
       '<a href="' + CONFIG.protocolUrl + '"><span><b>' + CONFIG.protocolLabel + '</b><small>Evidence-based menopause care at Optimal</small></span>' + I.arrow + '</a>' +
-      '<a href="' + CONFIG.bookUrl + '"' + blank + '><span><b>Book an intro</b><small>Talk with our team about your hormones</small></span>' + I.ext + '</a>' +
+      '<a href="' + CONFIG.bookUrl + '"' + blank + '><span><b>Book an intro</b><small>Talk with our team about your hormones</small></span>' + I.ext + newTab + '</a>' +
     '</div>';
-  body.appendChild(menu);
+  /* in the DOM right after the top bar, so Tab order runs button → menu → page */
+  if (navMount) navMount.insertAdjacentElement('afterend', menu); else body.appendChild(menu);
   var menuBtns = [].slice.call(document.querySelectorAll('[data-menu]'));
   function setMenu(open) {
     menu.hidden = !open;
@@ -179,6 +187,11 @@
   document.addEventListener('click', function (e) { if (!menu.hidden && !menu.contains(e.target)) setMenu(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { e.preventDefault(); setMenu(false); if (menuBtns[0]) menuBtns[0].focus(); } });
   menu.querySelectorAll('[data-present]').forEach(function (b) { b.addEventListener('click', function () { setMenu(false); }); });
+  /* tabbing out of the open menu closes it, so it never sits over the page with focus elsewhere */
+  menu.addEventListener('focusout', function (e) {
+    var to = e.relatedTarget;
+    if (!menu.hidden && to && !menu.contains(to) && menuBtns.indexOf(to) < 0) setMenu(false);
+  });
 
   /* ---------- chapter end + footer ---------- */
   var endMount = document.getElementById('end');
@@ -208,13 +221,13 @@
     footMount.innerHTML = '<footer class="foot"><div class="foot-inner">' +
       '<div class="foot-notice" role="note">' + I.info +
         '<p><b>This is general education, not medical advice.</b> It can’t account for your health history, medicines or test results. ' +
-        'Talk with a qualified clinician before you start, stop or change any treatment. In an emergency, call 911.</p></div>' +
+        'Talk with a qualified clinician before you start, stop or change any treatment. In an emergency, call 911. For a mental health crisis, call or text 9-8-8.</p></div>' +
       '<div class="foot-grid">' +
         '<div class="foot-brand"><img src="assets/img/optimal-wordmark-green.png" alt="Optimal" width="86" height="20"><span>' + C.name + '</span></div>' +
         '<address class="foot-col"><span class="label">Visit</span>' + C.street + '<br>' + C.city + '</address>' +
         '<div class="foot-col"><span class="label">Contact</span><a href="tel:' + C.tel + '">' + C.phone + '</a><a href="mailto:' + C.email + '">' + C.email + '</a></div>' +
         '<div class="foot-col"><span class="label">Explore</span><a href="' + CONFIG.protocolUrl + '">' + CONFIG.protocolLabel + '</a>' +
-          '<a href="' + CONFIG.bookUrl + '"' + blank + '>Book an intro</a><a href="' + C.site + '">beoptimal.ca</a></div>' +
+          '<a href="' + CONFIG.bookUrl + '"' + blank + '>Book an intro' + newTab + '</a><a href="' + C.site + '">beoptimal.ca</a></div>' +
       '</div>' +
       '<div class="foot-base"><span>' + note + '</span><span>© ' + new Date().getFullYear() + ' ' + C.name + '</span></div>' +
       '</div></footer>';
@@ -254,7 +267,9 @@
   }
 
   /* ---------- keyboard: chapters (scroll mode) ---------- */
+  /* arrow keys jump between chapters: a clicker shortcut, so it only runs with Present mode on */
   window.addEventListener('keydown', function (e) {
+    if (!PRESENT) return;
     if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) return;
     if (body.classList.contains('present') || !menu.hidden) return;
     var t = e.target;
@@ -490,10 +505,10 @@
         return '<li><a href="#story" data-go="' + i + '"><span class="num">' + pad(i + 1) + '</span><span class="tt">' + t + '</span>' + I.arrow + '</a></li>';
       }).join('');
       toc.querySelectorAll('[data-go]').forEach(function (a) {
-        a.addEventListener('click', function (e) { e.preventDefault(); request(+a.getAttribute('data-go')); });
+        a.addEventListener('click', function (e) { e.preventDefault(); request(+a.getAttribute('data-go'), true); });
       });
     }
-    root.querySelectorAll('[data-begin]').forEach(function (a) { a.addEventListener('click', function (e) { e.preventDefault(); request(0); }); });
+    root.querySelectorAll('[data-begin]').forEach(function (a) { a.addEventListener('click', function (e) { e.preventDefault(); request(0, true); }); });
 
     /* the cover photograph holds the right-hand panel until the header's foot rises past 62% of the
        viewport, so the diagram is in place before step 1 reaches the reading line */
@@ -572,10 +587,12 @@
       var y = lineY();
       for (var k = 0; k < n; k++) { var r = steps[k].getBoundingClientRect(); if (r.top <= y && r.bottom >= y) { go(k); return; } }
     }
-    function request(i) {
+    function request(i, moveFocus) {
       if (mode === 'present') { presentGo(i); return; }
       i = Math.max(0, Math.min(n - 1, i));
       go(i); lockScroll(); scrollToStep(i);
+      /* from the contents list or Begin: take focus to the step, so the next Tab continues from there */
+      if (moveFocus) { steps[i].setAttribute('tabindex', '-1'); steps[i].focus({ preventScroll: true }); }
     }
     function mobile() { return window.matchMedia('(max-width: 1000px)').matches; }
     function observe() {

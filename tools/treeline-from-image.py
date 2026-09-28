@@ -95,7 +95,10 @@ def synth(stack, k, lo, hi, tol):
     return chans, len(segs), guard
 
 (R, G, B), n, tries = synth(np.stack([near, mid, far]), 7, 160, 560, (12, 16, 9))
-Image.merge('RGB', (R, G, B)).save(out, optimize=True)
+tex = Image.merge('RGB', (R, G, B))
+tex.save(out, optimize=True)
+# the page loads the lossless WebP copy (same pixels, smaller file)
+tex.save(out.replace('.png', '.webp'), 'WEBP', lossless=True, quality=100, method=6)
 print('segments', n, 'tries', tries)
 
 prev = Image.new('RGB', (TW, TH), (46, 58, 80))

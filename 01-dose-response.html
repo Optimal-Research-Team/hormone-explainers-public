@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- seo:start -->
-<title>Cortisol levels: why too little and too much both harm · Optimal</title>
+<title>Cortisol: why too little and too much both harm · Optimal</title>
 <meta name="description" content="Drag a marker along cortisol’s dose–response curve to see what too little, too much and the healthy middle band do in the body. Chapter 1 of 8.">
 <link rel="canonical" href="https://optimal-research-team.github.io/hormone-explainers-public/01-dose-response.html">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -24,7 +24,7 @@
 <meta name="twitter:description" content="Drag a marker along cortisol’s dose–response curve to see what too little, too much and the healthy middle band do in the body. Chapter 1 of 8.">
 <meta name="twitter:image" content="https://optimal-research-team.github.io/hormone-explainers-public/assets/og/01.jpg">
 <meta name="twitter:image:alt" content="Cortisol has a dose-dependent effect: an illustrated diagram from Optimal’s hormone explainers">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://optimal-research-team.github.io/hormone-explainers-public/#site","name":"Hormone Explainers","url":"https://optimal-research-team.github.io/hormone-explainers-public/","inLanguage":"en-CA","publisher":{"@id":"https://beoptimal.ca/#clinic"}},{"@type":"MedicalClinic","@id":"https://beoptimal.ca/#clinic","name":"Optimal Health Clinic","url":"https://beoptimal.ca","logo":"https://optimal-research-team.github.io/hormone-explainers-public/assets/img/optimal-wordmark-green.png","telephone":"+1-437-370-0291","email":"care@beoptimal.ca","address":{"@type":"PostalAddress","streetAddress":"630 Huronia Road, Unit 5","addressLocality":"Barrie","addressRegion":"ON","postalCode":"L4N 0W5","addressCountry":"CA"}},{"@type":"MedicalWebPage","@id":"https://optimal-research-team.github.io/hormone-explainers-public/01-dose-response.html#page","url":"https://optimal-research-team.github.io/hormone-explainers-public/01-dose-response.html","name":"Cortisol has a dose-dependent effect","headline":"Cortisol has a dose-dependent effect","description":"Drag a marker along cortisol’s dose–response curve to see what too little, too much and the healthy middle band do in the body. Chapter 1 of 8.","inLanguage":"en-CA","audience":{"@type":"MedicalAudience","audienceType":"Patient"},"specialty":"https://schema.org/Endocrine","about":[{"@type":"MedicalEntity","name":"Cortisol"},{"@type":"MedicalEntity","name":"Adrenal insufficiency"},{"@type":"MedicalEntity","name":"Cushing’s syndrome"}],"image":"https://optimal-research-team.github.io/hormone-explainers-public/assets/og/01.jpg","dateModified":"2026-09-28","isPartOf":{"@id":"https://optimal-research-team.github.io/hormone-explainers-public/#site"},"publisher":{"@id":"https://beoptimal.ca/#clinic"},"position":1,"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hormone Explainers","item":"https://optimal-research-team.github.io/hormone-explainers-public/"},{"@type":"ListItem","position":2,"name":"Cortisol has a dose-dependent effect","item":"https://optimal-research-team.github.io/hormone-explainers-public/01-dose-response.html"}]}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://optimal-research-team.github.io/hormone-explainers-public/#site","name":"Hormone Explainers","url":"https://optimal-research-team.github.io/hormone-explainers-public/","inLanguage":"en-CA","publisher":{"@id":"https://www.beoptimal.ca/#clinic"}},{"@type":"MedicalClinic","@id":"https://www.beoptimal.ca/#clinic","name":"Optimal Health Clinic","url":"https://www.beoptimal.ca","logo":"https://optimal-research-team.github.io/hormone-explainers-public/assets/img/optimal-wordmark-green.png","telephone":"+1-437-370-0291","email":"care@beoptimal.ca","address":{"@type":"PostalAddress","streetAddress":"630 Huronia Road, Unit 5","addressLocality":"Barrie","addressRegion":"ON","postalCode":"L4N 0W5","addressCountry":"CA"}},{"@type":"MedicalWebPage","@id":"https://optimal-research-team.github.io/hormone-explainers-public/01-dose-response.html#page","url":"https://optimal-research-team.github.io/hormone-explainers-public/01-dose-response.html","name":"Cortisol has a dose-dependent effect","headline":"Cortisol has a dose-dependent effect","description":"Drag a marker along cortisol’s dose–response curve to see what too little, too much and the healthy middle band do in the body. Chapter 1 of 8.","inLanguage":"en-CA","audience":{"@type":"MedicalAudience","audienceType":"Patient"},"specialty":"https://schema.org/Endocrine","about":[{"@type":"MedicalEntity","name":"Cortisol"},{"@type":"MedicalEntity","name":"Adrenal insufficiency"},{"@type":"MedicalEntity","name":"Cushing’s syndrome"}],"image":"https://optimal-research-team.github.io/hormone-explainers-public/assets/og/01.jpg","datePublished":"2026-09-28","dateModified":"2026-09-28","isPartOf":{"@id":"https://optimal-research-team.github.io/hormone-explainers-public/#site"},"publisher":{"@id":"https://www.beoptimal.ca/#clinic"},"position":1,"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Hormone Explainers","item":"https://optimal-research-team.github.io/hormone-explainers-public/"},{"@type":"ListItem","position":2,"name":"Cortisol has a dose-dependent effect","item":"https://optimal-research-team.github.io/hormone-explainers-public/01-dose-response.html"}]}}]}</script>
 <!-- seo:end -->
 <meta name="theme-color" content="#FFFCF7">
 <link rel="icon" href="assets/img/symbol-green.png">
@@ -44,12 +44,14 @@
 .mk-tag rect { transition: fill .4s var(--ease); }
 .zlab { transition: fill .4s var(--ease); }
 .zlab.on { fill: var(--cream); }
+#doseSvg .t-lab { font-size: 18px; }
 @media (max-width: 640px) { .zlab, .peak-l, .mk-tag { display: none; } }
 </style>
 </head>
 <body data-chapter="1">
 <div id="nav" class="nav-wrap"></div>
 
+<main id="main">
 <section class="story at-head" id="story" data-links aria-label="Cortisol dose–response, step by step">
   <header class="chapter-head" id="top">
     <p class="ch-kicker reveal"><span class="num">Chapter 01</span><span>The basics</span></p>
@@ -57,7 +59,7 @@
     <p class="lede reveal" style="--i:2">Too little and too much cortisol both cause harm. The body needs a middle band, where cortisol does its everyday work of regulating energy, inflammation, blood pressure and mood.</p>
     <div class="head-actions reveal" style="--i:3">
       <a class="btn btn-primary" href="#story" data-begin>Begin<svg class="go" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2.5v11M3.5 9 8 13.5 12.5 9"/></svg></a>
-      <button class="btn-text" type="button" data-present><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.8" y="2.5" width="12.4" height="8.5" rx="1.6"/><path d="M8 11v2.5M5.5 13.5h5"/><path d="M6.8 5.2v3.1L9.3 6.75z" fill="currentColor"/></svg>Present in the exam room</button>
+      <template data-flag="present"><button class="btn-text" type="button" data-present><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.8" y="2.5" width="12.4" height="8.5" rx="1.6"/><path d="M8 11v2.5M5.5 13.5h5"/><path d="M6.8 5.2v3.1L9.3 6.75z" fill="currentColor"/></svg>Present in the exam room</button></template>
     </div>
     <figure class="head-cover-m reveal" style="--i:3" aria-hidden="true"><picture><source srcset="assets/img/chapters/01.webp" type="image/webp"><img src="assets/img/chapters/01.jpg" alt="" width="1536" height="1024" decoding="async"></picture></figure>
     <nav class="toc reveal" style="--i:4" aria-label="In this chapter"><p class="toc-h"><span>In this chapter</span><span class="num">5 steps</span></p><ol></ol></nav>
@@ -143,7 +145,7 @@
         <li>↓ Na⁺; ↑ K⁺ when aldosterone is also low, as in Addison’s disease</li>
         <li>Loss of appetite, weight loss, nausea, vomiting</li>
       </ul>
-      <p class="note">This is adrenal insufficiency. It is diagnosed with blood tests and treated by replacing the missing hormone.</p>
+      <p class="note">This is adrenal insufficiency. It is diagnosed with blood tests and treated by replacing the missing hormone. Untreated, it can become life-threatening (adrenal crisis).</p>
     </div></article>
 
     <article class="step" style="--dc:#2C4E25"><div class="step-inner">
@@ -167,10 +169,10 @@
         <li>Osteoporosis, fragility fractures, poor calcium absorption</li>
         <li>Skin fragility, striae, bruising, slow wound healing</li>
         <li>Memory impairment, anxiety, depression, poor sleep</li>
-        <li>↓ GnRH, ↓ growth hormone, central hypothyroidism</li>
+        <li>↓ GnRH, ↓ growth hormone, ↓ TSH (which can lower thyroid hormone)</li>
         <li>↑ glucose, insulin resistance, visceral fat, high blood pressure, atherosclerosis</li>
       </ul>
-      <p class="note">This is Cushing’s syndrome, most often caused by long-term steroid medicines. It is diagnosed with specific blood, urine or late-night saliva tests.</p>
+      <p class="note">This is Cushing’s syndrome, most often caused by long-term steroid medicines such as prednisone. Never stop a steroid medicine suddenly: talk to your prescriber, because stopping abruptly can cause cortisol deficiency. Cushing’s is diagnosed with specific blood, urine or late-night saliva tests.</p>
     </div></article>
 
     <article class="step"><div class="step-inner">
@@ -184,6 +186,7 @@
 </section>
 
 <div id="end"></div>
+</main>
 <div id="foot"></div>
 <script src="assets/js/glossary.js"></script>
 <script src="assets/js/site.js"></script>
