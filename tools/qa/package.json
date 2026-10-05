@@ -1,0 +1,13 @@
+{
+  "name": "hormone-explainers-qa",
+  "private": true,
+  "type": "module",
+  "description": "Headless click-through QA and screenshots for the Hormone Explainers static site",
+  "scripts": {
+    "qa": "node qa.mjs",
+    "snap": "node snap.mjs"
+  },
+  "dependencies": {
+    "puppeteer-core": "^23.11.1"
+  }
+}

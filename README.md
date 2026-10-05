@@ -1,5 +1,7 @@
 # Hormone Explainers: public version
 
+> **Engineers:** start with [ENGINEERING_HANDOFF.md](ENGINEERING_HANDOFF.md), then [DEV_TODO.md](DEV_TODO.md).
+
 Free, interactive education from **Optimal Health Clinic**: eight short scroll-story chapters on cortisol, stress, sleep and the hormone web, adapted from the notes our clinicians teach from and checked against published evidence.
 
 **This is the public version.** The internal patient version, used with patients in clinic, lives in the sibling folder `../hormone-explainers` (live at https://optimal-research-team.github.io/hormone-explainers/). Keep the two in step deliberately: medical edits made here should be considered for the internal version, and vice versa.
